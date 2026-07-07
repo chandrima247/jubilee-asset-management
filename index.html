@@ -1,0 +1,2603 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Jubilee Asset Management - Grow Your Wealth with Confidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* â”€â”€ DESIGN TOKENS â”€â”€ */
+:root{
+  --primary:#BA0C2F;
+  --primary-dark:#a00a29;
+  --primary-lt:#fef2f2;
+  --primary-xlt:#fff5f5;
+  --cta:#BA0C2F;
+  --cta-dark:#a00a29;
+  --accent:#DC3545;
+  --accent-lt:#fcebed;
+  --accent-xlt:#fff6f7;
+  --black:#111111;
+  --dark:#1a1a1a;
+  --text:#374151;
+  --text-md:#4b5563;
+  --text-lt:#6b7280;
+  --white:#ffffff;
+  --gray:#A7A9AC;
+  --gray-lt:#f5f5f5;
+  --bg-lt:#f8f9fa;
+  --bg-md:#f9fafb;
+  --border:#e5e7eb;
+  --shadow-sm:0 1px 4px rgba(0,0,0,.07);
+  --shadow-md:0 4px 16px rgba(0,0,0,.1);
+  --nav-h:72px;
+  --section-vh:calc(100dvh - var(--nav-h));
+}
+
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
+body{font-family:'Open Sans',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Inter',sans-serif}
+@media(min-width:1025px){
+  html{scroll-snap-type:y proximity;scroll-padding-top:var(--nav-h)}
+  body>section{scroll-snap-align:start;scroll-margin-top:var(--nav-h);min-height:var(--section-vh)}
+  body>section[style*='min-height:auto']{min-height:var(--section-vh)!important}
+  .hero{display:flex;align-items:center;min-height:var(--section-vh)}
+  .hero-inner{width:100%;min-height:var(--section-vh)}
+}
+
+/* â”€â”€ NAV â”€â”€ */
+.nav{position:sticky;top:0;z-index:300;background:var(--white);border-bottom:1px solid var(--border);height:72px;display:flex;align-items:center}
+.nav-inner{max-width:1400px;margin:0 auto;width:100%;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.nav-logo img{height:46px;width:auto;object-fit:contain;display:block}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:600;color:var(--text);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--black)}
+.nav-right{display:flex;align-items:center;gap:28px;flex-shrink:0}
+.nav-nxtpe-corner{display:flex;align-items:center;text-decoration:none;opacity:.9;transition:opacity .2s;flex-shrink:0}
+.nav-nxtpe-corner:hover{opacity:1}
+.nav-nxtpe-corner img{height:38px;width:auto;display:block}
+.btn-nav{background:var(--cta);color:var(--white);border:none;border-radius:6px;padding:10px 22px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s,box-shadow .15s;white-space:nowrap}
+.btn-nav:hover{background:var(--cta-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(186,12,47,.35)}
+.nav-burger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0}
+.nav-burger span{display:block;height:2px;background:var(--dark);border-radius:2px;transition:all .25s}
+
+/* â”€â”€ HERO â”€â”€ */
+.hero{background:var(--white);overflow:hidden}
+.hero-inner{
+  max-width:1400px;margin:0 auto;padding:40px 40px 60px;
+  display:grid;
+  grid-template-columns:1fr 680px;
+  column-gap:48px;
+  min-height:520px;
+  align-items:center
+}
+.hero-content{grid-column:1;max-width:540px;padding-top:24px;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;background:var(--primary-lt);color:var(--primary-dark);font-size:12px;font-weight:700;padding:5px 12px;border-radius:4px;margin-bottom:16px;border:1px solid rgba(160,10,41,.22);letter-spacing:.03em}
+.hero-content h1{font-size:48px;font-weight:800;line-height:1.1;color:var(--black)}
+.hero-content h1 span{color:var(--primary-dark)}
+.hero-content p{font-size:16px;color:var(--text-md);line-height:1.65;margin:16px 0 36px}
+.cta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--cta);color:var(--white);border:none;border-radius:8px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s,box-shadow .15s}
+.btn-primary:hover{background:var(--cta-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(186,12,47,.35)}
+.btn-primary:active{transform:scale(.97)}
+.btn-outline{background:transparent;color:var(--black);border:2px solid var(--black);border-radius:8px;padding:13px 22px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-outline:hover{background:var(--black);color:var(--white);transform:translateY(-2px)}
+.trust-badges{display:flex;gap:20px;margin-top:28px;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-md);font-weight:600}
+.trust-badge-dot{width:7px;height:7px;background:var(--primary);border-radius:50%;flex-shrink:0}
+
+/* Steps card */
+.hero-steps-card{border:1px solid var(--border);border-radius:14px;padding:20px 24px;background:var(--white);box-shadow:var(--shadow-sm);position:relative;z-index:2}
+.steps-lbl{font-size:11px;font-weight:700;color:var(--text-lt);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;display:block}
+.steps-row{display:flex;align-items:flex-start;justify-content:space-between;width:100%}
+.hero-step{display:flex;align-items:flex-start;gap:7px;flex:1;min-width:0}
+.step-connector{width:16px;height:2px;background:var(--border);flex-shrink:0;margin-top:12px}
+.step-num{width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--black);font-family:'Inter',sans-serif}
+.step-num.active{background:var(--primary);color:var(--white)}
+.step-num.dark{background:var(--black);color:var(--white)}
+.step-num.muted{background:transparent;border:2px solid var(--border);color:var(--text-lt)}
+.step-text strong{font-size:11px;font-weight:700;color:var(--dark);display:block;margin-bottom:2px;line-height:1.3}
+.step-text span{font-size:10px;color:var(--text-lt);line-height:1.3;display:block}
+
+/* Hero carousel */
+.hero-carousel{grid-column:2;grid-row:1;position:relative;overflow:hidden;border-radius:14px;min-height:460px;margin-right:-32px;align-self:stretch}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.65s ease-in-out}
+.hero-slide.active{opacity:1}
+.hero-slide-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-slide-photo-portrait{object-position:center 13%}
+.hero-slide-photo-planning{object-position:center 38%}
+.hero-slide-photo-growth{object-position:center 22%}
+.hero-slide-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,38,.06) 0%,rgba(6,16,38,.12) 54%,rgba(6,16,38,.42) 100%)}
+.hero-slide-copy{position:absolute;left:22px;bottom:22px;z-index:2;max-width:300px;padding:14px 16px 13px;border-radius:16px;background:linear-gradient(180deg,rgba(12,20,37,.22),rgba(12,20,37,.62));backdrop-filter:blur(3px);color:var(--white);box-shadow:0 12px 28px rgba(0,0,0,.16)}
+.hero-slide-kicker{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.hero-slide-title{font-size:18px;font-weight:800;line-height:1.3;font-family:'Inter',sans-serif;margin:10px 0 0}
+.hero-carousel-fade{display:none}
+.hero-carousel-dots{position:absolute;bottom:14px;right:18px;display:flex;gap:7px;z-index:3}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);border:none;cursor:pointer;padding:0;transition:background .25s,transform .25s;outline:none}
+.hero-dot.active{background:var(--primary);transform:scale(1.25)}
+
+/* â”€â”€ SPLIT LAYOUT â”€â”€ */
+.split-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split-reverse{direction:rtl}.split-reverse>*{direction:ltr}
+.split-img{border-radius:16px;overflow:hidden;align-self:stretch;min-height:320px}
+.split-img img{width:100%;height:100%;object-fit:cover;display:block}
+.split-img--photo{background:#d9e6f7}
+.split-content{display:flex;flex-direction:column}
+.benefit-rows-alt{display:flex;flex-direction:column;gap:18px;margin-top:18px}
+.benefit-row-alt{display:flex;align-items:flex-start;gap:14px}
+.benefit-row-alt strong{font-size:14px;font-weight:700;color:var(--black);display:block;margin-bottom:2px}
+.benefit-row-alt p{font-size:13px;color:var(--text-md);margin:0;line-height:1.5}
+.benefit-row-icon{width:36px;height:36px;background:var(--primary-lt);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(160,10,41,.18)}
+.benefit-row-icon svg{width:16px;height:16px;color:var(--black)}
+
+/* â”€â”€ SHARED SECTION STYLES â”€â”€ */
+.stag{display:inline-flex;align-items:center;background:var(--primary-lt);color:var(--primary-dark);font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:4px;margin-bottom:12px;border:1px solid rgba(160,10,41,.2);letter-spacing:.04em;text-transform:uppercase}
+.sec-h2{font-size:34px;font-weight:800;color:var(--black);margin:8px 0 10px;line-height:1.15}
+.sec-p{font-size:15px;color:var(--text-md);line-height:1.65}
+.inner{max-width:1360px;margin:0 auto;padding:0 40px}
+
+/* â”€â”€ HOW IT WORKS â”€â”€ */
+.hiw{background:var(--primary);padding:28px 0 30px;display:flex;align-items:center}
+.hiw .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+.hiw .sec-h2{color:#fff;max-width:720px}
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px;position:relative}
+.hiw-steps::before{content:'';position:absolute;top:20px;left:calc(12.5% + 18px);right:calc(12.5% + 18px);height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.32) 0,rgba(255,255,255,.32) 10px,transparent 10px,transparent 18px);z-index:0}
+.hiw-step{background:#fff;border-radius:16px;padding:20px 18px 18px;min-height:176px;box-shadow:0 16px 34px rgba(8,20,42,.12);text-align:left;position:relative;z-index:1;transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;gap:12px;border:1px solid rgba(255,255,255,.1)}
+.hiw-step:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(8,20,42,.18)}
+.hiw-step-top{display:flex;align-items:flex-start;gap:10px;position:relative;padding-right:42px}
+.hiw-step-num{width:34px;height:34px;border-radius:50%;background:var(--primary);color:var(--white);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Inter',sans-serif}
+.hiw-step-icon{width:32px;height:32px;background:#f8fafc;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:absolute;top:0;right:0}
+.hiw-step-icon svg{width:16px;height:16px;color:var(--black)}
+.hiw-step h3{font-size:13px;font-weight:700;color:var(--black);margin:0;line-height:1.35}
+.hiw-step p{font-size:12.5px;color:var(--text-md);line-height:1.55;margin:0}
+.hiw-step-body{display:flex;flex-direction:column;gap:6px}
+
+/* Investment planner */
+.planner{background:var(--white);padding:20px 0 16px;display:flex;align-items:center}
+.planner .inner{width:100%}
+.planner-head{max-width:520px}
+.planner-shell{display:grid;grid-template-columns:minmax(0,.92fr) minmax(400px,1.08fr);max-width:1040px;width:100%;margin:14px auto 0;border:1px solid var(--border);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 28px rgba(15,23,42,.05)}
+.planner-inputs{padding:18px 20px 20px;background:#fff;min-width:0}
+.planner-results{padding:18px 20px 18px;background:var(--primary);color:#fff;display:flex;flex-direction:column;min-width:0}
+.planner-field{margin-bottom:14px}
+.planner-field:last-child{margin-bottom:0}
+.planner-label,.planner-years-line{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.planner-years-line span:last-child{color:var(--text-lt);font-size:11px}
+.planner-field-note{display:block;margin-top:7px;min-height:32px;font-size:11px;line-height:1.45;color:var(--text-lt)}
+.planner-field-note.error{color:var(--accent)}
+.planner-input-wrap{position:relative;display:flex;align-items:center}
+.planner-prefix{position:absolute;left:14px;font-size:12px;font-weight:700;color:var(--text-lt);pointer-events:none}
+.planner-input,.planner-select{width:100%;height:44px;border:1.5px solid var(--border);border-radius:12px;background:#fff;color:var(--black);font:600 14px/1.3 'Inter',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.planner-input{padding:0 16px 0 52px}
+.planner-select{padding:0 48px 0 16px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:16px}
+.planner-input:focus,.planner-select:focus{border-color:var(--cta);box-shadow:0 0 0 4px rgba(186,12,47,.08)}
+.planner-input.is-error{border-color:var(--accent);box-shadow:0 0 0 4px rgba(220,53,69,.08)}
+.planner-range{width:100%;accent-color:var(--cta);margin-top:2px}
+.planner-result-label{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.74)}
+.planner-result-value{display:inline-block;font:800 28px/1.02 'Inter',sans-serif;color:#7ef0aa;margin-top:4px;letter-spacing:-.04em;font-variant-numeric:tabular-nums;width:12ch;white-space:nowrap}
+.planner-graph-card{margin-top:12px;padding:10px 12px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
+.planner-graph-top{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:6px}
+.planner-graph-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.planner-graph-year{font:700 13px/1.2 'Inter',sans-serif;color:#fff;font-variant-numeric:tabular-nums}
+.planner-graph-wrap{position:relative;border-radius:14px;overflow:hidden;background:
+radial-gradient(circle at 1px 1px, rgba(126,240,170,.26) 1.1px, transparent 0) 0 0/12px 12px,
+linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);height:138px}
+.planner-graph-svg{display:block;width:100%;height:100%}
+.planner-graph-start,.planner-graph-end{position:absolute;font:700 10px/1.2 'Inter',sans-serif;color:#fff;z-index:2;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:8ch}
+.planner-graph-start{left:10px;bottom:10px}
+.planner-graph-end{right:10px;top:10px;text-align:right}
+.planner-graph-caption{display:flex;justify-content:space-between;gap:16px;margin-top:8px;font-size:10.5px;color:rgba(255,255,255,.7)}
+.planner-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+.planner-stat-label{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.68)}
+.planner-stat-value{display:inline-block;font:700 17px/1.2 'Inter',sans-serif;color:#fff;margin-top:4px;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:9ch}
+.planner-disclaimer{margin-top:auto;padding-top:10px;font-size:10.5px;line-height:1.45;color:rgba(255,255,255,.58)}
+@media(min-width:1025px){
+  .planner{min-height:var(--section-vh);padding:18px 0 16px}
+  .planner .inner{display:flex;flex-direction:column;justify-content:center}
+}
+
+/* â”€â”€ FUNDS (2-col card grid) â”€â”€ */
+.funds{background:var(--white);padding:52px 0;display:flex;align-items:center}
+.funds-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
+.fund-card{background:var(--bg-lt);border-radius:16px;padding:20px 20px 24px;border:1px solid var(--border);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;gap:16px}
+.fund-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)}
+.fund-card-media{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/9;background:#dbe8fb; max-height: 150px;}
+.fund-card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.fund-card-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,48,.04),rgba(7,26,48,.18))}
+.fund-card-icon{width:52px;height:52px;background:var(--primary);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
+.fund-card:hover .fund-card-icon{transform:scale(1.08)}
+.fund-card-icon svg{width:24px;height:24px;color:var(--white)}
+.fund-card h3{font-size:18px;font-weight:800;color:var(--black);line-height:1.2;margin:0}
+.fund-card .fund-desc{font-size:13px;color:var(--text-md);line-height:1.6;margin:0}
+.fund-meta{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--border);padding-top:14px;margin-top:4px}
+.fund-meta-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.fund-meta-lbl{font-size:12px;color:var(--text-lt);font-weight:600}
+.fund-meta-val{font-size:12px;font-weight:700;color:var(--black)}
+.fund-risk-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.02em}
+.fund-risk-low{background:#dcfce7;color:#166534}
+.fund-risk-mod{background:#fef9c3;color:#854d0e}
+.fund-risk-med{background:#dbeafe;color:#1e40af}
+.fund-learn-btn{margin-top:8px;align-self:flex-start;background:transparent;border:none;padding:0;color:var(--primary);font:800 13px/1.4 'Inter',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.fund-learn-btn::after{content:'+';width:22px;height:22px;border-radius:50%;background:var(--primary-lt);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
+.fund-learn-btn:hover{color:var(--primary-dark)}
+
+/* Fund modal */
+.fund-modal{position:fixed;inset:0;z-index:420;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(15,23,42,.7);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .22s ease}
+.fund-modal.open{opacity:1;pointer-events:auto}
+.fund-modal-panel{width:min(880px,100%);max-height:min(88vh,820px);overflow:auto;background:#fff;border-radius:20px;box-shadow:0 28px 80px rgba(10,15,25,.22);border:1px solid var(--border)}
+.fund-modal-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border:none;border-radius:50%;background:var(--bg-lt);color:var(--black);cursor:pointer;font-size:20px;line-height:1}
+.fund-modal-close:hover{background:var(--primary-lt)}
+.fund-modal-kicker{display:inline-flex;align-items:center;background:var(--primary-lt);color:var(--primary-dark);font-size:11px;font-weight:700;padding:5px 12px;border-radius:4px;border:1px solid rgba(160,10,41,.2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.custom-scrollbar::-webkit-scrollbar{width:6px}
+.custom-scrollbar::-webkit-scrollbar-track{background:#f1f5f9}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
+.fund-detail-panel{width:min(1080px,100%);max-height:none;overflow:visible;border-radius:28px}
+.fund-detail-shell{display:flex;flex-direction:column;max-height:none;background:#fff}
+.fund-detail-header{position:relative;padding:24px 28px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.fund-detail-header-main{display:flex;gap:20px;align-items:flex-start;padding-right:52px}
+.fund-detail-iconbox{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;box-shadow:0 12px 28px rgba(15,23,42,.16)}
+.fund-detail-iconbox svg{width:26px;height:26px}
+.fund-detail-risk{display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.fund-detail-risk.low{background:#dcfce7;color:#166534}
+.fund-detail-risk.moderate{background:#fef3c7;color:#92400e}
+.fund-detail-title{font:700 32px/1.08 'Inter',sans-serif;color:var(--black);margin:0;letter-spacing:-.03em}
+.fund-detail-content{flex:1;overflow:visible;padding:22px 28px 24px;display:flex;flex-direction:column;gap:22px}
+.fund-detail-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fund-detail-stat{background:#f8fafc;padding:18px;border-radius:18px;border:1px solid #edf2f7}
+.fund-detail-stat-label{display:block;font-size:11px;font-weight:700;color:var(--text-lt);text-transform:uppercase;letter-spacing:.08em}
+.fund-detail-stat-value{display:block;font:700 26px/1.1 'Inter',sans-serif;color:var(--black);margin-top:8px;letter-spacing:-.03em}
+.fund-detail-stat-note{display:block;font-size:11px;line-height:1.5;color:var(--text-lt);margin-top:6px}
+.fund-detail-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:24px}
+.fund-detail-col{display:flex;flex-direction:column;gap:18px}
+.fund-detail-section h4{font-size:12px;font-weight:700;color:var(--black);text-transform:uppercase;letter-spacing:.09em;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.fund-detail-section h4 svg{width:14px;height:14px;color:var(--cta)}
+.fund-detail-section p{font-size:14px;line-height:1.72;color:var(--text-md);margin:0}
+.fund-detail-allocation{display:flex;flex-direction:column;gap:14px}
+.fund-detail-allocation-item{display:flex;flex-direction:column;gap:6px}
+.fund-detail-allocation-row{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12px}
+.fund-detail-allocation-row span{color:var(--text-md);font-weight:600}
+.fund-detail-allocation-row strong{color:var(--black);font-size:12px;font-weight:700}
+.fund-detail-allocation-track{width:100%;height:6px;border-radius:999px;background:#e8eef5;overflow:hidden}
+.fund-detail-allocation-fill{height:100%;border-radius:999px}
+.fund-detail-facts-card{background:#0f172a;color:#fff;padding:20px;border-radius:22px}
+.fund-detail-facts-card h4{margin:0 0 16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8}
+.fund-detail-facts{display:flex;flex-direction:column;gap:0}
+.fund-detail-fact{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(148,163,184,.22)}
+.fund-detail-fact:last-child{border-bottom:none;padding-bottom:0}
+.fund-detail-fact span{font-size:13px;line-height:1.5;color:#94a3b8}
+.fund-detail-fact strong{font-size:13px;line-height:1.5;color:#fff;text-align:right;font-weight:600}
+.fund-detail-card{padding:18px 20px;border:1px solid var(--border);border-radius:18px;background:#fff}
+.fund-detail-card h5{font:600 16px/1.3 'Inter',sans-serif;color:var(--black);margin:0 0 12px}
+.fund-detail-card.full-width{padding:18px 20px}
+.fund-detail-list{display:flex;flex-direction:column;gap:10px}
+.fund-detail-list-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;color:var(--text-md)}
+.fund-detail-list-item svg{width:14px;height:14px;color:#16a34a;flex-shrink:0;margin-top:4px}
+.fund-detail-footer{padding:24px 32px;border-top:1px solid #eef2f7;background:#f8fafc;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.fund-detail-footer-copy{display:flex;align-items:center;gap:12px}
+.fund-detail-footer-badges{display:flex;align-items:center}
+.fund-detail-footer-badge{width:32px;height:32px;border-radius:50%;border:2px solid #fff;background:#e2e8f0;color:#334155;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;margin-left:-6px}
+.fund-detail-footer-badge:first-child{margin-left:0}
+.fund-detail-footer-copy span{font-size:12px;line-height:1.5;color:var(--text-lt);font-style:italic}
+.fund-detail-footer-actions{display:flex;align-items:center;gap:12px}
+.fund-detail-secondary{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border:none;border-radius:14px;background:transparent;color:var(--text-md);font:600 14px/1.4 'Inter',sans-serif;cursor:pointer;transition:background .18s,color .18s}
+.fund-detail-secondary:hover{background:#fef2f2;color:var(--black)}
+.fund-detail-primary{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border:none;border-radius:14px;background:var(--cta);color:#fff;font:700 14px/1.4 'Inter',sans-serif;cursor:pointer;box-shadow:0 14px 28px rgba(186,12,47,.18);text-decoration:none;transition:background .18s,transform .18s}
+.fund-detail-primary:hover{background:#0a438f}
+.fund-detail-primary:active{transform:scale(.98)}
+
+/* Risk quiz modal */
+.risk-quiz-panel{width:min(920px,100%);max-height:min(88vh,860px)}
+.risk-quiz-shell{position:relative;background:var(--white)}
+.risk-quiz-scene[hidden]{display:none!important}
+.risk-quiz-scene-main{padding:28px 32px 26px}
+.risk-quiz-progress{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+.risk-quiz-progress-copy{display:flex;flex-direction:column;gap:6px}
+.risk-quiz-step{font-size:11px;font-weight:700;color:var(--text-lt);letter-spacing:.08em;text-transform:uppercase}
+.risk-quiz-step-title{font:600 12px/1.4 'Inter',sans-serif;color:var(--text-md)}
+.risk-quiz-bar{flex:1;height:4px;border-radius:999px;background:#fef2f2;overflow:hidden;max-width:240px}
+.risk-quiz-bar-fill{height:100%;width:0;background:var(--primary);border-radius:999px;transition:width .28s ease}
+.risk-quiz-body{padding-top:12px}
+.risk-quiz-question{font:700 24px/1.2 'Inter',sans-serif;color:var(--black);margin:0;max-width:none;letter-spacing:-.02em}
+.risk-quiz-help{display:none}
+.risk-quiz-options{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}
+.risk-quiz-option{width:100%;display:flex;align-items:center;gap:20px;text-align:left;padding:26px 28px;border:1px solid #e6edf5;border-radius:18px;background:#fff;cursor:pointer;transition:border-color .18s,background .18s,box-shadow .18s}
+.risk-quiz-option:hover{border-color:#cdddf2;background:#fff;box-shadow:0 10px 22px rgba(160,10,41,.04)}
+.risk-quiz-option.selected{border-color:#bfd8ff;background:#fff;box-shadow:none}
+.risk-quiz-option-badge{width:54px;height:54px;border-radius:14px;background:#f4f7fb;color:#7f97b8;display:flex;align-items:center;justify-content:center;flex:0 0 54px;font:700 17px/1 'Inter',sans-serif;transition:background .18s,color .18s}
+.risk-quiz-option:hover .risk-quiz-option-badge{background:var(--primary);color:#fff}
+.risk-quiz-option.selected .risk-quiz-option-badge{background:#2f66e8;color:#fff}
+.risk-quiz-option-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+.risk-quiz-option strong{display:block;font:700 18px/1.3 'Inter',sans-serif;color:var(--black)}
+.risk-quiz-option p{font-size:13px;line-height:1.5;color:var(--text-md);margin:0}
+.risk-quiz-option-check{display:none}
+.risk-quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding-top:16px;border-top:1px solid var(--border)}
+.risk-quiz-footnote{font-size:12px;line-height:1.65;color:var(--text-lt);margin:0;max-width:420px}
+.risk-quiz-nav{display:flex;align-items:center;gap:16px}
+.risk-quiz-link-btn{background:transparent;border:none;color:var(--primary);font:600 13px/1.4 'Inter',sans-serif;cursor:pointer;padding:0}
+.risk-quiz-link-btn[disabled]{opacity:.38;cursor:not-allowed}
+.risk-quiz-scene-analyzing{padding:72px 44px;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.risk-quiz-spinner{width:58px;height:58px;border:4px solid #dbe8f7;border-top-color:var(--cta);border-radius:50%;animation:riskQuizSpin .9s linear infinite;margin-bottom:22px}
+.risk-quiz-scene-analyzing h4{font:700 26px/1.15 'Inter',sans-serif;color:var(--black);margin:0}
+.risk-quiz-scene-analyzing p{font-size:14px;line-height:1.7;color:var(--text-md);margin:10px 0 0}
+.risk-quiz-result{display:flex;flex-direction:column;gap:20px;padding:28px 32px}
+.risk-quiz-result-layout{display:grid;grid-template-columns:minmax(280px,.92fr) minmax(0,1.08fr);gap:28px;align-items:stretch}
+.risk-quiz-result-visual{display:flex;flex-direction:column;gap:16px}
+.risk-quiz-result-image-wrap{position:relative;overflow:hidden;border-radius:24px;aspect-ratio:4/3;background:var(--primary-dark)}
+.risk-quiz-result-image-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.risk-quiz-result-image-overlay{position:absolute;inset:auto 0 0 0;padding:22px;background:linear-gradient(180deg,rgba(8,16,31,0) 0%,rgba(8,16,31,.78) 100%);color:#fff}
+.risk-quiz-result-kicker{display:block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.risk-quiz-result-image-overlay h4{font:700 24px/1.1 'Inter',sans-serif;margin:0}
+.risk-quiz-result-summary{padding:18px;border:1px solid var(--border);border-radius:18px;background:var(--bg-lt)}
+.risk-quiz-result-summary h5{font:700 14px/1.3 'Inter',sans-serif;color:var(--black);margin:0 0 8px}
+.risk-quiz-result-summary p{font-size:13px;line-height:1.65;color:var(--text-md);margin:0}
+.risk-quiz-result-main{display:flex;flex-direction:column;gap:18px;height:100%}
+.risk-quiz-result-heading h4{font:700 30px/1.1 'Inter',sans-serif;color:var(--black);margin:8px 0 8px;letter-spacing:-.02em}
+.risk-quiz-result-heading p{font-size:14px;line-height:1.65;color:var(--text-md);margin:0}
+.risk-quiz-result-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.risk-quiz-result-fact span{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-lt);margin-bottom:6px}
+.risk-quiz-result-fact strong{display:block;font:600 14px/1.45 'Inter',sans-serif;color:var(--black)}
+.risk-quiz-result-note{font-size:12px;line-height:1.7;color:var(--text-lt);margin:0}
+.risk-quiz-result-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:auto;padding-top:10px}
+.risk-quiz-primary-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px}
+.risk-quiz-actionbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;border-top:1px solid var(--border)}
+.risk-quiz-actionset{display:flex;flex-wrap:wrap;gap:10px}
+.risk-quiz-actionmeta{display:flex;align-items:center;justify-content:flex-end;gap:16px;flex:1}
+.risk-quiz-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 15px;border-radius:10px;border:1px solid var(--border);background:#fff;color:var(--black);font:600 13px/1.4 'Inter',sans-serif;cursor:pointer;text-decoration:none}
+.risk-quiz-secondary:hover{border-color:var(--primary);color:var(--primary)}
+.risk-quiz-result-actions .risk-quiz-secondary{min-height:48px}
+.risk-quiz-text-action{display:inline-flex;align-items:center;gap:8px;background:transparent;border:none;padding:0;color:var(--text-md);font:600 13px/1.4 'Inter',sans-serif;cursor:pointer;text-decoration:none;white-space:nowrap}
+.risk-quiz-text-action:hover{color:var(--primary)}
+.risk-quiz-text-action::after{content:'\2192';font-size:13px;line-height:1;transition:transform .16s ease}
+.risk-quiz-text-action:hover::after{transform:translateX(2px)}
+.risk-quiz-retake{white-space:nowrap}
+.risk-quiz-status{font-size:12px;line-height:1.6;color:var(--primary-dark);min-height:20px}
+@keyframes riskQuizSpin{to{transform:rotate(360deg)}}
+
+/* â”€â”€ WHAT IS A UNIT TRUST (hero split) â”€â”€ */
+.benefits{background:#fcfcfd;padding:48px 0;display:flex;align-items:center}
+.unittrust-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:38px;align-items:center}
+.unittrust-visual{position:relative}
+.unittrust-orb{position:absolute;top:-18px;left:-18px;width:92px;height:92px;border-radius:50%;background:#edf4ff;z-index:0}
+.unittrust-image{position:relative;z-index:1;overflow:hidden;border-radius:28px;border:1px solid #edf2f7;box-shadow:0 24px 60px rgba(15,23,42,.12);max-width:420px}
+.unittrust-image img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:5/6;transition:transform .7s ease}
+.unittrust-image:hover img{transform:scale(1.05)}
+.unittrust-content{display:flex;flex-direction:column;gap:24px}
+.unittrust-title{font:700 44px/1.06 'Inter',sans-serif;color:var(--black);letter-spacing:-.04em;margin:0}
+.unittrust-title .accent{color:var(--cta)}
+.unittrust-copy{font-size:16px;line-height:1.7;color:var(--text-md);max-width:560px;margin:10px 0 0}
+.unittrust-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.unittrust-card{background:#fff;padding:18px;border-radius:24px;border:1px solid #edf2f7;box-shadow:0 6px 16px rgba(15,23,42,.04);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.unittrust-card:hover{transform:translateY(-4px);border-color:#dbeafe;box-shadow:0 16px 36px rgba(186,12,47,.08)}
+.unittrust-card:hover .unittrust-card-icon{background:#dbeafe;color:#1e40af}
+.unittrust-card-icon{width:38px;height:38px;border-radius:12px;background:#f8fafc;color:#94a3b8;display:flex;align-items:center;justify-content:center;transition:background .28s ease,color .28s ease;margin-bottom:12px}
+.unittrust-card-icon svg{width:17px;height:17px}
+.unittrust-card h3{font:700 16px/1.3 'Inter',sans-serif;color:var(--black);margin:0 0 6px}
+.unittrust-card p{font-size:14px;line-height:1.62;color:var(--text-md);margin:0}
+.unittrust-actions{display:flex;align-items:center;gap:18px;padding-top:2px}
+.unittrust-actions .btn-primary{box-shadow:0 16px 36px rgba(186,12,47,.14)}
+.unittrust-link{font-size:14px;font-weight:600;color:var(--text-md);text-decoration:none;transition:color .18s ease}
+.unittrust-link:hover{color:var(--black)}
+
+/* â”€â”€ WHY INVEST WITH Jubilee (coverage grid) â”€â”€ */
+.cov{background:var(--white);padding:38px 0 40px;display:flex;align-items:center}
+.cov-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.cov-head-copy{display:flex;flex-direction:column;align-items:flex-start}
+.cov-shell{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);gap:34px;align-items:center;margin-top:24px}
+.cov-image{border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:0 22px 54px rgba(15,23,42,.12);background:#d9e6f7;min-height:520px}
+.cov-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%}
+.cov-list{display:flex;flex-direction:column;gap:0}
+.cov-item{display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--border)}
+.cov-item:last-child{border-bottom:none;padding-bottom:0}
+.cov-item-icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cov-item-icon svg{width:18px;height:18px;color:var(--white)}
+.cov-item-text{display:flex;flex-direction:column;gap:4px;padding-top:2px}
+.cov-item-title{font-size:15px;font-weight:700;color:var(--black);line-height:1.25}
+.cov-item-desc{font-size:13px;color:var(--text-lt);line-height:1.5}
+
+/* â”€â”€ RISK PROFILES â”€â”€ */
+.risk-sec{background:#F2F2F5;padding:52px 0;display:flex;align-items:center}
+.risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.risk-card{background:var(--white);border-radius:16px;padding:28px 24px;border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;gap:14px}
+.risk-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--primary)}
+.risk-card-num{width:48px;height:48px;border-radius:50%;background:var(--primary-lt);border:2px solid rgba(160,10,41,.18);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:var(--primary);font-family:'Inter',sans-serif}
+.risk-card h3{font-size:17px;font-weight:800;color:var(--black);margin:0}
+.risk-card .risk-score{font-size:12px;color:var(--text-lt);font-weight:600;margin-top:-8px}
+.risk-card .risk-desc{font-size:13px;color:var(--text-md);line-height:1.6;margin:0}
+.risk-recommended{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--border);padding-top:14px;margin-top:4px}
+.risk-rec-lbl{font-size:10.5px;font-weight:700;color:var(--text-lt);text-transform:uppercase;letter-spacing:.06em}
+.risk-rec-fund{font-size:13px;font-weight:700;color:var(--primary)}
+.risk-fund-link{display:inline-flex;align-items:center;gap:5px;font-size:13.5px;font-weight:700;color:var(--primary);text-decoration:none;margin-top:4px}
+.risk-fund-link:hover{text-decoration:underline}
+.risk-cta{text-align:center;margin-top:36px}
+
+/* â”€â”€ ELIGIBILITY â”€â”€ */
+.elig{background:var(--bg-lt);padding:52px 0;display:flex;align-items:center}
+.elig .split-layout{align-items:start}
+.elig .split-img{align-self:start;min-height:0;height:clamp(440px,31vw,510px)}
+.elig .split-img img{height:100%;object-position:center 22%}
+.elig-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.elig-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:10px;border:1px solid var(--border)}
+.elig-check{width:22px;height:22px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.elig-check svg{width:11px;height:11px;color:var(--white)}
+.elig-item p{font-size:14px;color:var(--text-md);line-height:1.55}
+.elig-item p strong{color:var(--black)}
+
+/* â”€â”€ BEFORE YOU APPLY â”€â”€ */
+.before{background:var(--white);padding:52px 0;display:flex;align-items:center}
+.before-cards{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.68fr);gap:18px;align-items:start;margin-top:28px}
+.before-main{min-width:0}
+.before-layout{margin-top:0}
+.before-elig-card{background:linear-gradient(180deg,var(--primary-dark) 0%,var(--primary) 100%);border-radius:20px;padding:22px 22px 20px;color:var(--white);box-shadow:0 18px 40px rgba(160,10,41,.16);border:1px solid rgba(255,255,255,.08)}
+.before-elig-tag{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:14px}
+.before-elig-card h3{font-size:24px;font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:0 0 40px;color:var(--white);font-family:'Inter',sans-serif}
+.before-elig-card p{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.76);margin:0}
+.before-elig-list{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.before-elig-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}
+.before-elig-item:first-child{border-top:none;padding-top:0}
+.before-elig-mark{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.before-elig-mark svg{width:11px;height:11px;color:var(--white)}
+.before-elig-item span{font-size:13.5px;line-height:1.5;color:var(--white)}
+.before-elig-item strong{font-weight:700}
+.cl-list{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-sm)}
+.cl-row{display:flex;align-items:flex-start;gap:16px;padding:22px 24px;border-bottom:1px solid var(--border);position:relative}
+.cl-row:nth-child(odd){border-right:1px solid var(--border)}
+.cl-row:nth-last-child(-n+2){border-bottom:none}
+.cl-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--white);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Inter',sans-serif}
+.cl-body{flex:1;min-width:0}
+.cl-title{font-size:14px;font-weight:700;color:var(--black);margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cl-desc{font-size:12.5px;color:var(--text-md);line-height:1.55;margin-bottom:0}
+
+/* â”€â”€ APPLICATION STEPS â”€â”€ */
+.enroll-sec{background:var(--primary);padding:72px 0 76px;min-height:auto;display:flex;align-items:center}
+.enroll-sec .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+.enroll-sec .sec-h2{color:var(--white)}
+.enroll-sec .sec-p{color:rgba(255,255,255,.72)}
+.enroll-grid{margin-top:26px}
+.enroll-panel{padding:0;height:auto;display:flex;flex-direction:column;background:transparent}
+.enroll-title{display:none}
+.enroll-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;position:relative}
+.enroll-cards::before{content:'';position:absolute;left:8%;right:8%;top:26px;height:2px;border-top:2px dashed rgba(255,255,255,.28);z-index:0}
+.enroll-card{position:relative;padding:26px 24px 22px;background:rgba(255,255,255,.98);border-radius:22px;border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 36px rgba(8,20,38,.16);min-height:220px;z-index:1}
+.enroll-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+.enroll-step-num{width:44px;height:44px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--white);font-size:20px;font-weight:800;box-shadow:0 8px 18px rgba(160,10,41,.18)}
+.enroll-card-icon{width:38px;height:38px;border-radius:12px;background:#f7f9fc;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.enroll-card-icon svg{width:18px;height:18px;color:var(--black)}
+.enroll-card-title{font-size:17px;font-weight:800;color:var(--black);margin:0 0 10px;line-height:1.28}
+.enroll-card-copy{font-size:14px;color:var(--text-md);margin:0;line-height:1.55}
+.enroll-card-copy a{color:var(--cta);font-weight:700;text-decoration:none}
+.enroll-card-copy a:hover{color:var(--cta-dark)}
+
+/* â”€â”€ FAQ â”€â”€ */
+.faq{background:var(--white);padding:52px 0}
+.faq-hdr{margin-bottom:40px}
+.faq-hdr h2{font-size:34px;font-weight:800;color:var(--black);margin:8px 0 10px;font-family:'Inter',sans-serif}
+.faq-hdr p{font-size:15px;color:var(--text-lt);line-height:1.6}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.faq-item{background:var(--bg-lt);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:box-shadow .2s,border-color .2s,transform .2s}
+.faq-item:hover{box-shadow:var(--shadow-md)}
+.faq-item:hover{border-color:rgba(160,10,41,.18);transform:translateY(-1px)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;font-size:14px;font-weight:700;color:var(--black);user-select:none;gap:12px}
+.faq-q:hover{background:var(--primary-xlt)}
+.faq-plus{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:700;transition:transform .25s;line-height:1;color:var(--white)}
+.faq-item.open .faq-plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;font-size:13px;color:var(--text-md);line-height:1.72;padding:0 20px}
+.faq-item.open .faq-a{max-height:420px;padding:0 20px 18px}
+
+/* â”€â”€ CTA SECTION â”€â”€ */
+.cta-bg{background:linear-gradient(180deg,var(--primary-dark) 0%,#0a2f56 58%,var(--primary) 100%);padding:40px 0 28px;position:relative;overflow:hidden;display:flex;align-items:center}
+.cta-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(186,12,47,.14),transparent 32%),linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));pointer-events:none}
+.cta-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:56px;width:100%;position:relative;z-index:1}
+.cta-top{display:grid;grid-template-columns:minmax(0,520px) auto;gap:24px;align-items:center;justify-content:space-between}
+.cta-top-copy .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:var(--white)}
+.cta-top-copy h2{font:700 28px/1.15 'Open Sans',sans-serif;color:rgba(255,255,255,.94);margin:0;max-width:20ch;letter-spacing:-.02em}
+.cta-top-copy p{font-size:14px;color:rgba(255,255,255,.58);line-height:1.65;max-width:560px}
+.cta-metrics{display:flex;align-items:stretch;gap:0}
+.cta-metric{padding:2px 24px 0;border-left:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;justify-content:flex-end}
+.cta-metric:first-child{border-left:none;padding-left:0}
+.cta-metric-value{font-size:40px;font-weight:800;line-height:1;color:var(--white);font-family:'Inter',sans-serif;letter-spacing:-.04em}
+.cta-metric-label{margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.cta-panel{background:#ffffff;border-radius:28px;padding:80px;min-height:260px;display:grid;grid-template-columns:1fr 120px;gap:20px;align-items:center;box-shadow:0 24px 64px rgba(0,0,0,.16);width:min(1180px,100%);margin:0 auto}
+.cta-panel-copy h3{font-size:40px;font-weight:800;color:#0b1b33;line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;max-width:16ch}
+.cta-panel-copy p{font-size:14px;color:#4f6178;line-height:1.65;max-width:520px;margin:0 0 22px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-cta{background:#081a33;color:#fff;border:none;border-radius:12px;padding:13px 22px;font-size:14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .15s}
+.btn-cta:hover{background:#0d2547;transform:translateY(-2px);box-shadow:0 10px 24px rgba(8,26,51,.2)}
+.btn-cta:active{transform:scale(.97)}
+.btn-cta-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-size:14px;font-weight:600;color:#0b1b33;border:1.5px solid rgba(11,27,51,.16);background:transparent;text-decoration:none;transition:all .2s}
+.btn-cta-ghost:hover{border-color:rgba(11,27,51,.32);background:rgba(255,255,255,.42)}
+.cta-mark{justify-self:end;width:96px;height:96px;border-radius:28px;background:rgba(160,10,41,.05);display:flex;align-items:center;justify-content:center}
+.cta-mark svg{width:54px;height:54px;color:rgba(160,10,41,.18)}
+.cta-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:2px}
+
+/* â”€â”€ WHATSAPP SECTION â”€â”€ */
+.wa-sec{background:var(--bg-lt);padding:72px 0}
+.wa-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:260px 1fr;gap:72px;align-items:center}
+.wa-img-wrap{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-mockup{width:min(100%,290px);display:flex;justify-content:center}
+.wa-phone{width:100%;background:var(--primary-xlt);border-radius:34px;padding:12px;border:1px solid rgba(17,17,17,.08);box-shadow:0 18px 40px rgba(17,17,17,.12)}
+.wa-phone-screen{background:#efeae2;border-radius:24px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.wa-chat-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff}
+.wa-chat-avatar{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.wa-chat-avatar img{width:100%;height:100%;object-fit:contain}
+.wa-chat-avatar strong{font:800 14px/1 'Inter',sans-serif;color:var(--primary-dark)}
+.wa-chat-meta{min-width:0}
+.wa-chat-meta strong{display:block;font-size:13px;font-weight:700;line-height:1.2}
+.wa-chat-meta span{display:block;font-size:11px;color:rgba(255,255,255,.8);line-height:1.3;margin-top:2px}
+.wa-chat-body{padding:14px;background:linear-gradient(rgba(255,255,255,.52),rgba(255,255,255,.52)),radial-gradient(circle at 12px 12px,rgba(0,0,0,.035) 1px,transparent 1px);background-size:auto,24px 24px;display:flex;flex-direction:column;gap:10px}
+.wa-bubble{max-width:88%;padding:11px 12px;border-radius:16px 16px 16px 6px;background:#fff;box-shadow:0 6px 18px rgba(17,17,17,.07);border:1px solid rgba(17,17,17,.05)}
+.wa-bubble strong{display:block;font-size:12.5px;font-weight:700;color:var(--black);margin-bottom:4px}
+.wa-bubble p{font-size:12px;color:var(--text-md);line-height:1.5;margin:0}
+.wa-time{display:block;font-size:10px;color:var(--text-lt);margin-top:6px;text-align:right}
+.wa-quick-actions{display:flex;flex-wrap:wrap;gap:8px;padding-top:2px}
+.wa-chip{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(0,100,203,.18);color:var(--primary-dark);font-size:11px;font-weight:700;box-shadow:0 4px 12px rgba(17,17,17,.05)}
+.wa-cnt{max-width:620px}
+.wa-cnt h2{font-size:32px;font-weight:800;color:var(--black);margin:8px 0 12px;line-height:1.2;font-family:'Inter',sans-serif}
+.wa-cnt p{font-size:15px;color:var(--text-lt);line-height:1.65;margin-bottom:22px}
+.wa-topics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.wa-tp{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;color:var(--dark);cursor:pointer;transition:background .2s,border-color .2s,transform .15s;display:flex;align-items:center;gap:6px}
+.wa-tp:hover{background:var(--accent-lt);border-color:var(--accent);transform:translateY(-1px)}
+.btn-wa{background:var(--cta);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .15s}
+.btn-wa:hover{background:var(--cta-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(186,12,47,.3)}
+.wa-hrs{font-size:12px;color:var(--text-lt);margin-top:10px;display:flex;align-items:center;gap:6px}
+.wa-hrs::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--primary);flex-shrink:0}
+
+/* â”€â”€ WHATSAPP FLOATING WIDGET â”€â”€ */
+:root{--wa:#25D366}
+.wa-launcher{position:fixed;right:34px;bottom:34px;z-index:80;width:62px;height:62px;border:none;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 18px 40px rgba(37,211,102,.35);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.wa-launcher:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 52px rgba(37,211,102,.42);background:#20BE5B}
+.wa-launcher svg{width:34px;height:34px;fill:currentColor}
+.wa-widget{position:fixed;right:34px;bottom:112px;z-index:81;width:min(380px,calc(100vw - 36px));background:#fff;border-radius:28px;box-shadow:0 28px 80px rgba(9,10,12,.24);border:1px solid rgba(0,0,0,.06);overflow:hidden;opacity:0;pointer-events:none;transform:translateY(18px) scale(.98);transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}
+.wa-widget.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.wa-widget-head{background:linear-gradient(135deg,#006B5B,#128C7E);color:#fff;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.wa-widget-title{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-weight:800;font-size:15px;letter-spacing:-.02em}
+.wa-widget-title span{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-widget-title svg{width:21px;height:21px;fill:#fff}
+.wa-close{width:34px;height:34px;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.wa-close:hover{background:rgba(255,255,255,.24)}
+.wa-close svg{width:18px;height:18px;fill:currentColor}
+.wa-widget-body{padding:18px;background:#F5F1EA}
+.wa-message{max-width:92%;background:#fff;border-radius:4px 20px 20px 20px;padding:13px 15px;margin-bottom:14px;box-shadow:0 6px 18px rgba(0,0,0,.07);font-size:13px;line-height:1.6;color:#26313F}
+.wa-quick-replies{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.wa-quick-reply{border:1px solid rgba(18,140,126,.20);background:#fff;color:#006B5B;border-radius:999px;padding:9px 11px;font:800 11px/1 'Inter',sans-serif;letter-spacing:-.01em;cursor:pointer;box-shadow:0 5px 14px rgba(0,0,0,.05);transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.wa-quick-reply:hover{background:#E7F7EE;color:#075E54;border-color:rgba(18,140,126,.38);transform:translateY(-1px)}
+.wa-widget-form{display:flex;align-items:flex-end;gap:9px;background:#fff;border-radius:26px;padding:9px 8px 9px 16px;border:1px solid #E7E9EE}
+.wa-widget-form textarea{flex:1;min-width:0;border:none;outline:none;background:transparent;font:600 13px/1.45 'Open Sans',sans-serif;color:#1F2937;padding:8px 0;min-height:38px;max-height:88px;resize:none;overflow-y:auto;scrollbar-width:thin}
+.wa-send{width:42px;height:42px;border:none;border-radius:50%;background:var(--primary);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .18s ease,background .18s ease}
+.wa-send:hover{transform:scale(1.05);background:var(--primary-dark)}
+.wa-send svg{width:20px;height:20px;fill:currentColor;transform:translateX(1px)}
+
+/* â”€â”€ FOOTER â”€â”€ */
+footer{background:#071a30;padding:48px 0 64px;color:#fff;position:relative;z-index:1}
+.ft-inner{max-width:1360px;margin:0 auto;padding:0 40px}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ft-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;margin-top:12px;max-width:260px}
+.ft-logo img{height:27px;width:auto;display:block}
+.ft-logo img{height:34px;width:auto;display:block;background:#fff;padding:6px 10px;border-radius:10px}
+.ft-col h4{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ft-col a{font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.ft-col a:hover{color:var(--accent)}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.06)}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.28)}
+.ft-reg{font-size:12px;color:rgba(255,255,255,.2)}
+.ft-logo-row{display:flex;align-items:center;gap:16px}
+.ft-divider{width:1px;height:24px;background:rgba(255,255,255,.15)}
+.ft-nxtpe-wrap{display:flex;align-items:center;gap:0;text-decoration:none}
+.ft-nxtpe-wrap img{height:26px;width:auto;opacity:.6;transition:opacity .2s;filter:brightness(0) invert(1)}
+.ft-nxtpe-wrap:hover img{opacity:.9}
+
+
+/* â”€â”€ RESPONSIVE â€” TABLET â‰¤ 1024px â”€â”€ */
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr 420px;column-gap:24px;padding:32px 24px 48px}
+  .hiw-steps{grid-template-columns:1fr 1fr;gap:16px}
+  .hiw-steps::before{display:none}
+  .planner-shell{grid-template-columns:1fr}
+  .planner-results{border-top:1px solid rgba(255,255,255,.08)}
+  .funds-grid{grid-template-columns:1fr 1fr}
+  .risk-grid{grid-template-columns:1fr 1fr}
+  .cta-top{grid-template-columns:1fr;gap:18px;align-items:start}
+  .cta-metrics{gap:18px}
+  .cta-metric{padding:0 18px;border-left:1px solid rgba(255,255,255,.1)}
+  .cta-panel{grid-template-columns:1fr 120px;padding:32px}
+  .cov-shell{grid-template-columns:1fr;gap:18px}
+  .cov-image{min-height:360px}
+  .before-cards{grid-template-columns:1fr}
+  .elig-list{grid-template-columns:1fr}
+  .enroll-cards{grid-template-columns:1fr 1fr}
+  .enroll-cards::before{display:none}
+  .ft-top{grid-template-columns:1fr 1fr;gap:28px}
+  .wa-inner{grid-template-columns:1fr;gap:36px;text-align:center}
+  .wa-img-wrap{order:-1}
+  .wa-hrs{justify-content:center}
+  .wa-topics{justify-content:center}
+}
+
+/* â”€â”€ RESPONSIVE â€” MOBILE â‰¤ 768px â”€â”€ */
+@media(max-width:768px){
+  .nav-inner{padding:0 16px}
+  .nav-links{position:absolute;top:72px;left:0;right:0;background:var(--white);flex-direction:column;gap:0;padding:8px 0;box-shadow:var(--shadow-md);z-index:299;border-top:1px solid var(--border)}
+  .nav-links.nav-open{display:flex}
+  .nav-links li a{display:block;padding:13px 20px;font-size:15px;border-bottom:1px solid var(--border)}
+  .nav-right{gap:8px}
+  .btn-nav{display:none}
+  .nav-nxtpe-corner{display:none}
+  .nav-burger{display:flex;margin-left:4px}
+
+  .split-layout,.split-layout.split-reverse{grid-template-columns:1fr;gap:24px;direction:ltr}
+  .split-img{aspect-ratio:16/9;align-self:auto;max-height:none;min-height:0;width:100%;max-width:100%}
+  .split-reverse>.split-img{order:-1}
+
+  .hero-inner{display:flex;flex-direction:column;padding:0 0 28px;gap:0;min-height:unset}
+  .hero-carousel{order:1;min-height:320px;margin:0;border-radius:0;width:100%}
+  .hero-content{order:2;max-width:100%;padding:20px 16px 0}
+  .hero-right{order:3;width:100%;padding:16px 16px 0}
+  .hero-content h1{font-size:26px;line-height:1.2}
+  .hero-content p{font-size:14px;margin:10px 0 20px;line-height:1.6}
+  .btn-primary{padding:12px 16px;font-size:13.5px;white-space:nowrap}
+  .btn-outline{padding:11px 14px;font-size:13.5px;white-space:nowrap}
+  .cta-row{gap:8px}
+  .cta-row a{flex:1;justify-content:center;text-align:center}
+  .trust-badges{gap:12px;margin-top:20px}
+  .trust-badge{font-size:12px}
+  .hero-steps-card{padding:14px 16px}
+  .hero-slide-copy{left:16px;right:16px;bottom:16px;max-width:none;padding:12px 14px}
+  .hero-slide-title{font-size:16px;margin:8px 0 0}
+  .steps-lbl{font-size:10px;margin-bottom:10px}
+  .steps-row{flex-wrap:wrap;gap:8px}
+  .step-connector{display:none}
+  .hero-step{flex:0 0 calc(50% - 4px)}
+  .step-text strong{font-size:10.5px}
+  .step-text span{font-size:9.5px}
+
+  .inner,.ft-inner{padding-left:16px;padding-right:16px}
+  .sec-h2{font-size:22px}
+  .sec-p{font-size:13.5px}
+  .stag{font-size:10.5px;padding:4px 10px}
+
+  .hiw{padding:26px 0 28px}
+  .hiw-steps{grid-template-columns:1fr;gap:10px;margin-top:18px}
+  .hiw-step{text-align:left;display:flex;align-items:flex-start;gap:12px;padding:18px 14px;min-height:unset}
+  .hiw-step-num{flex-shrink:0;margin:0;width:36px;height:36px;font-size:13px}
+  .hiw-step-icon{display:none}
+  .hiw-step h3{font-size:13px}
+  .hiw-step p{font-size:12px}
+
+  .planner{padding:44px 0}
+  .planner-shell{margin-top:20px;border-radius:24px}
+  .planner-inputs,.planner-results{padding:22px 20px}
+  .planner-result-value{font-size:30px}
+  .planner-fit-name{font-size:22px}
+  .planner-fit-copy{font-size:13px}
+  .planner-graph-wrap{height:154px}
+  .planner-stats{grid-template-columns:1fr;gap:14px}
+  .planner-cta{width:100%}
+
+  .funds{padding:44px 0}
+  .funds-grid{grid-template-columns:1fr;gap:12px;margin-top:24px}
+  .fund-card{padding:18px 16px 20px}
+  .fund-modal{padding:16px}
+  .fund-detail-panel{border-radius:24px}
+  .fund-detail-header{padding:24px 20px 20px}
+  .fund-detail-header-main{flex-direction:column;gap:16px;padding-right:52px}
+  .fund-detail-title{font-size:28px}
+  .fund-detail-content{padding:20px;gap:24px}
+  .fund-detail-stats{grid-template-columns:1fr}
+  .fund-detail-stat{padding:18px}
+  .fund-detail-stat-value{font-size:24px}
+  .fund-detail-grid{grid-template-columns:1fr;gap:24px}
+  .fund-detail-facts-card{padding:20px}
+  .fund-detail-card{padding:20px}
+  .fund-detail-onboarding{align-items:flex-start}
+  .fund-detail-footer{padding:20px;flex-direction:column;align-items:flex-start}
+  .fund-detail-footer-copy{align-items:flex-start}
+  .fund-detail-footer-actions{width:100%;flex-direction:column}
+  .fund-detail-footer-actions .fund-detail-secondary,
+  .fund-detail-footer-actions .fund-detail-primary{width:100%}
+  .risk-quiz-scene-main{padding:22px 20px 20px}
+  .risk-quiz-progress{flex-direction:column;align-items:flex-start}
+  .risk-quiz-bar{max-width:none;width:100%}
+  .risk-quiz-question{font-size:20px}
+  .risk-quiz-option{padding:18px 18px;gap:14px}
+  .risk-quiz-option-badge{width:44px;height:44px;flex-basis:44px;border-radius:12px;font-size:15px}
+  .risk-quiz-option strong{font-size:15px}
+  .risk-quiz-footer{flex-direction:column;align-items:flex-start}
+  .risk-quiz-nav{width:100%;justify-content:space-between}
+  .risk-quiz-scene-analyzing{padding:48px 22px;min-height:320px}
+  .risk-quiz-scene-analyzing h4{font-size:22px}
+  .risk-quiz-result{padding:22px 20px 20px}
+  .risk-quiz-result-layout{grid-template-columns:1fr}
+  .risk-quiz-result-image-overlay h4{font-size:22px}
+  .risk-quiz-result-heading h4{font-size:24px}
+  .risk-quiz-result-facts{grid-template-columns:1fr;gap:12px}
+  .risk-quiz-result-actions{grid-template-columns:1fr}
+  .risk-quiz-result-actions .btn-primary,
+  .risk-quiz-result-actions .risk-quiz-secondary{width:100%;justify-content:center}
+  .risk-quiz-actionbar{flex-direction:column;align-items:flex-start}
+  .risk-quiz-actionset{width:100%;flex-direction:column;align-items:flex-start}
+  .risk-quiz-actionmeta{width:100%;flex-direction:column;align-items:flex-start}
+  .risk-quiz-actionset .risk-quiz-text-action,
+  .risk-quiz-actionmeta .risk-quiz-text-action{width:auto}
+
+  .benefits{padding:40px 0}
+  .unittrust-layout{grid-template-columns:1fr;gap:28px}
+  .unittrust-visual{order:2}
+  .unittrust-content{order:1;gap:26px}
+  .unittrust-orb{width:84px;height:84px;top:-14px;left:-8px}
+  .unittrust-image{border-radius:24px}
+  .unittrust-image img{aspect-ratio:16/11}
+  .unittrust-title{font-size:34px}
+  .unittrust-copy{font-size:15px;max-width:none}
+  .unittrust-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .unittrust-card{padding:18px;border-radius:24px}
+  .unittrust-card-icon{width:38px;height:38px;margin-bottom:14px}
+  .unittrust-card h3{font-size:15px}
+  .unittrust-card p{font-size:13px}
+  .unittrust-actions{flex-wrap:wrap;gap:16px}
+
+  .cov{padding:34px 0 36px}
+  .cov-image{min-height:300px;border-radius:20px}
+  .cov-item{padding:14px 0;gap:12px}
+  .cov-item-icon{width:34px;height:34px;border-radius:8px}
+  .cov-item-icon svg{width:16px;height:16px}
+  .cov-item-title{font-size:13px}
+  .cov-item-desc{font-size:12px}
+
+  .risk-sec{padding:44px 0}
+  .risk-grid{grid-template-columns:1fr;gap:12px;margin-top:24px}
+
+  .elig{padding:44px 0}
+  .elig-list{grid-template-columns:1fr}
+
+  .before{padding:44px 0}
+  .before-cards{gap:14px;margin-top:22px}
+  .before-elig-card{padding:18px 18px 16px}
+  .before-elig-card h3{font-size:20px}
+  .before-layout{margin-top:0}
+  .cl-list{grid-template-columns:1fr}
+  .cl-row{border-right:none!important;padding:16px 16px}
+  .cl-row:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
+  .cl-row:last-child{border-bottom:none}
+
+  .enroll-sec{padding:52px 0}
+  .enroll-cards{grid-template-columns:1fr;gap:12px}
+  .enroll-card{min-height:unset;padding:20px 18px 18px}
+  .enroll-step-num{width:40px;height:40px;font-size:18px}
+  .enroll-card-title{font-size:15px}
+  .enroll-card-copy{font-size:13px}
+  .enroll-summary{margin-top:14px;padding:14px 16px}
+
+  .faq{padding:44px 0}
+  .faq-grid{grid-template-columns:1fr;gap:8px}
+  .faq-q{font-size:13px;padding:14px 14px}
+  .faq-item.open .faq-a{max-height:520px}
+  .faq-a{font-size:12.5px}
+
+  .cta-bg{padding:40px 0 28px}
+  .cta-inner{padding:0 16px;gap:20px}
+  .cta-top-copy h2{font-size:22px;max-width:20ch}
+  .cta-top-copy p{font-size:14px}
+  .cta-metrics{flex-wrap:wrap;gap:12px}
+  .cta-metric{padding:0 12px;border-left:none}
+  .cta-metric-value{font-size:34px}
+  .cta-panel{grid-template-columns:1fr;padding:26px 22px;border-radius:22px}
+  .cta-panel-copy h3{font-size:22px;max-width:14ch}
+  .cta-panel-copy p{font-size:14px;margin-bottom:18px}
+  .cta-btns{flex-direction:column;gap:10px}
+  .btn-cta,.btn-cta-ghost{width:100%;justify-content:center;font-size:15px}
+  .cta-mark{display:none}
+
+  footer{padding:36px 0 0}
+  .ft-top{grid-template-columns:1fr;gap:20px;padding-bottom:20px}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:6px;padding:12px 0 14px}
+
+  .wa-launcher{right:18px;bottom:18px;width:58px;height:58px}
+  .wa-widget{right:18px;bottom:90px;width:calc(100vw - 36px);border-radius:24px}
+}
+
+@media(max-width:480px){
+  .hero-carousel{min-height:280px}
+  .hero-content h1{font-size:22px}
+  .hero-step{flex:0 0 calc(50% - 4px)}
+  .trust-badges{flex-direction:column;gap:6px}
+  .cov-image{min-height:240px}
+  .cta-metric-value{font-size:30px}
+}
+
+/* ── WHATSAPP FLOATING WIDGET ── */
+:root{--wa:#25D366}
+.wa-launcher{position:fixed;right:34px;bottom:34px;z-index:80;width:62px;height:62px;border:none;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 18px 40px rgba(37,211,102,.35);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.wa-launcher:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 22px 52px rgba(37,211,102,.42);background:#20BE5B}
+.wa-launcher svg{width:34px;height:34px;fill:currentColor}
+.wa-widget{position:fixed;right:34px;bottom:112px;z-index:81;width:min(380px,calc(100vw - 36px));background:#fff;border-radius:28px;box-shadow:0 28px 80px rgba(9,10,12,.24);border:1px solid rgba(0,0,0,.06);overflow:hidden;opacity:0;pointer-events:none;transform:translateY(18px) scale(.98);transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease}
+.wa-widget.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.wa-widget-head{background:linear-gradient(135deg,#006B5B,#128C7E);color:#fff;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.wa-widget-title{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-weight:800;font-size:15px;letter-spacing:-.02em}
+.wa-widget-title span{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-widget-title svg{width:21px;height:21px;fill:#fff}
+.wa-close{width:34px;height:34px;border:none;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.wa-close:hover{background:rgba(255,255,255,.24)}
+.wa-close svg{width:18px;height:18px;fill:currentColor}
+.wa-widget-body{padding:18px;background:#F5F1EA}
+.wa-message{max-width:92%;background:#fff;border-radius:4px 20px 20px 20px;padding:13px 15px;margin-bottom:14px;box-shadow:0 6px 18px rgba(0,0,0,.07);font-size:13px;line-height:1.6;color:#26313F}
+.wa-quick-replies{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.wa-quick-reply{border:1px solid rgba(18,140,126,.20);background:#fff;color:#006B5B;border-radius:999px;padding:9px 11px;font:800 11px/1 'Inter',sans-serif;letter-spacing:-.01em;cursor:pointer;box-shadow:0 5px 14px rgba(0,0,0,.05);transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.wa-quick-reply:hover{background:#E7F7EE;color:#075E54;border-color:rgba(18,140,126,.38);transform:translateY(-1px)}
+.wa-widget-form{display:flex;align-items:flex-end;gap:9px;background:#fff;border-radius:26px;padding:9px 8px 9px 16px;border:1px solid #E7E9EE}
+.wa-widget-form textarea{flex:1;min-width:0;border:none;outline:none;background:transparent;font:600 13px/1.45 'Open Sans',sans-serif;color:#1F2937;padding:8px 0;min-height:38px;max-height:88px;resize:none;overflow-y:auto;scrollbar-width:thin}
+.wa-send{width:42px;height:42px;border:none;border-radius:50%;background:var(--cta);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .18s ease,background .18s ease}
+.wa-send:hover{transform:scale(1.05);background:var(--cta-dark)}
+.wa-send svg{width:20px;height:20px;fill:currentColor;transform:translateX(1px)}
+@media(max-width:600px){.wa-launcher{right:18px;bottom:18px}.wa-widget{right:18px;bottom:90px;width:calc(100vw - 36px);border-radius:24px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <img src="https://jubileeinsurance.com/ug/wp-content/themes/jubilee/assets/images/jubilee-logo.png" alt="Jubilee Asset Management" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#funds">Our Funds</a></li>
+        <li><a href="#planner">Planner</a></li>
+          <li><a href="#apply">Before You Apply</a></li>
+          <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://jubilee-asset-intent.vercel.app/" target="_blank" rel="noopener" class="btn-nav">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Start Application
+      </a>
+      <a href="https://www.nxt.pe" target="_blank" rel="noopener" class="nav-nxtpe-corner">
+        <img src="https://www.nxt.pe/assets/nxtpeLogo.png" alt="NxtPe" />
+      </a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-tag">Jubilee Asset Management</span>
+      <h1>Grow Your Wealth<br/>with <span>Confidence</span></h1>
+      <p>Invest in professionally managed unit trust funds designed for stability, income, and long-term growth across Kenya.</p>
+      <div class="cta-row">
+        <a href="https://jubilee-asset-intent.vercel.app/" target="_blank" rel="noopener" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Start Application
+        </a>
+        <a href="#funds" class="btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          View Funds
+        </a>
+      </div>
+      <div class="trust-badges">
+        <span class="trust-badge"><span class="trust-badge-dot"></span>CMA regulated in Kenya</span>
+        <span class="trust-badge"><span class="trust-badge-dot"></span>Professionally managed funds</span>
+        <span class="trust-badge"><span class="trust-badge-dot"></span>Risk profiling before fund choice</span>
+        <span class="trust-badge"><span class="trust-badge-dot"></span>Trusted by retail and institutional investors</span>
+      </div>
+    </div>
+
+    <!-- Right: full-height carousel -->
+    <div class="hero-carousel" id="heroCarousel">
+      <div class="hero-slide active">
+        <img class="hero-slide-photo hero-slide-photo-portrait" src="https://i.ibb.co/tTRtnkLv/hero-uganda-businesswoman.jpg" alt="Professional investor reviewing financial goals" />
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-copy">
+          <span class="hero-slide-kicker">Jubilee Money Market Fund</span>
+          <p class="hero-slide-title">Built for stability, liquidity, and steady returns.</p>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <img class="hero-slide-photo hero-slide-photo-planning" src="https://i.ibb.co/DgP5zsSS/eligibility-couple-consultation.jpg" alt="African couple reviewing documents with an advisor" loading="lazy" />
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-copy">
+          <span class="hero-slide-kicker">Jubilee Balanced Fund</span>
+          <p class="hero-slide-title">Designed for income plus capital growth with moderate risk.</p>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <img class="hero-slide-photo hero-slide-photo-growth" src="https://i.ibb.co/TBDj58ps/hero-african-women-team.jpg" alt="African women in a professional group around a laptop, with one member looking at the camera" loading="lazy" />
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-copy">
+          <span class="hero-slide-kicker">Risk Profiling</span>
+          <p class="hero-slide-title">Answer a few questions before the final fund recommendation.</p>
+        </div>
+      </div>
+      <div class="hero-carousel-fade"></div>
+      <div class="hero-carousel-dots" id="heroDots">
+        <button class="hero-dot active" aria-label="Slide 1"></button>
+        <button class="hero-dot" aria-label="Slide 2"></button>
+        <button class="hero-dot" aria-label="Slide 3"></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT IS A UNIT TRUST -->
+<section class="benefits" id="benefits">
+  <div class="inner">
+    <div class="unittrust-layout">
+      <div class="unittrust-visual">
+        <div class="unittrust-orb" aria-hidden="true"></div>
+        <div class="unittrust-image">
+          <img src="https://i.ibb.co/pjqhR5V3/unit-trust.png" alt="Jubilee Unit Trust" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="unittrust-content">
+        <span class="stag">What Is a Unit Trust</span>
+        <div>
+          <h2 class="unittrust-title">What is a unit trust?</h2>
+          <p class="unittrust-copy">A unit trust pools investor money into one professionally managed portfolio, giving you diversification and expert oversight from the start.</p>
+        </div>
+
+        <div class="unittrust-grid">
+          <div class="unittrust-card">
+            <div class="unittrust-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11c1.657 0 3-1.567 3-3.5S17.657 4 16 4s-3 1.567-3 3.5 1.343 3.5 3 3.5Z"/><path d="M8 11c1.657 0 3-1.567 3-3.5S9.657 4 8 4 5 5.567 5 7.5 6.343 11 8 11Z"/><path d="M16 13c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5Z"/><path d="M8 13c-.29 0-.6.012-.92.037C4.1 13.27 1 14.42 1 16.5V20h6"/></svg>
+            </div>
+            <h3>Pooled Funds</h3>
+            <p>Your money is invested alongside other investors in one fund.</p>
+          </div>
+
+          <div class="unittrust-card">
+            <div class="unittrust-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H3"/><path d="M21 12H10"/><path d="M21 6H14"/><path d="M6 6h.01"/><path d="M6 12h.01"/><path d="M6 18h.01"/><path d="M10 18h11"/></svg>
+            </div>
+            <h3>Diversified</h3>
+            <p>Your investment is spread across different assets, not one holding.</p>
+          </div>
+
+          <div class="unittrust-card">
+            <div class="unittrust-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Expert Managed</h3>
+            <p>Professional fund managers make the portfolio decisions for you.</p>
+          </div>
+
+          <div class="unittrust-card">
+            <div class="unittrust-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            </div>
+            <h3>Long-term Discipline</h3>
+            <p>Built for more disciplined investing over time.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTOR JOURNEY -->
+<section class="enroll-sec" id="how-it-works">
+  <div class="inner">
+    <span class="stag">How It Works</span>
+    <h2 class="sec-h2">Start Investing in 5 Steps</h2>
+
+    <div class="enroll-grid">
+      <div class="enroll-panel">
+        <div class="enroll-cards">
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">1</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Keep Things Ready</p>
+            <p class="enroll-card-copy">Review <a href="#apply">Before You Apply</a> and keep your key details ready.</p>
+          </div>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">2</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Fill the Form</p>
+            <p class="enroll-card-copy">Complete the form in about 5 minutes, including your details and <a href="#risk">risk profile</a> questions.</p>
+          </div>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">3</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Choose Your Fund</p>
+            <p class="enroll-card-copy">Compare <a href="#funds">Our Funds</a> and choose the fund that best fits your goal.</p>
+          </div>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">4</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Make Your Payment</p>
+            <p class="enroll-card-copy">Make your first investment using the payment method noted in <a href="#apply">Before You Apply</a>.</p>
+          </div>
+          <div class="enroll-card">
+            <div class="enroll-card-top">
+              <div class="enroll-step-num">5</div>
+              <div class="enroll-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+            </div>
+            <p class="enroll-card-title">Receive Your Units</p>
+            <p class="enroll-card-copy">Once payment is received, your account is confirmed and units are allocated.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR FUNDS -->
+<section class="funds" id="funds">
+  <div class="inner">
+    <span class="stag">Our Funds</span>
+    <h2 class="sec-h2">Choose the Right Fund for Your Goals</h2>
+    <p class="sec-p">Jubilee offers professionally managed funds built for liquidity, income, and long-term wealth creation.</p>
+
+    <div class="funds-grid">
+
+      <!-- Jubilee Money Market Fund -->
+      <div class="fund-card">
+        <div class="fund-card-media">
+          <img src="https://i.ibb.co/4nHFWmJc/money-market-fund.png" alt="Jubilee Money Market Fund" loading="lazy" />
+        </div>
+        <div>
+          <h3>Jubilee Money Market Fund</h3>
+          <p class="fund-desc">Built for stability, liquidity, and capital preservation.</p>
+        </div>
+        <div class="fund-meta">
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Risk Level</span>
+            <span class="fund-risk-badge fund-risk-low">Low Risk</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Investment Horizon</span>
+            <span class="fund-meta-val">Short Term</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Main Goal</span>
+            <span class="fund-meta-val">Capital preservation</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Best For</span>
+            <span class="fund-meta-val">Savings and emergency funds</span>
+          </div>
+        </div>
+        <button class="fund-learn-btn" type="button" data-fund-modal="mmf">Learn more</button>
+      </div>
+
+      <!-- Jubilee Balanced Fund -->
+      <div class="fund-card">
+        <div class="fund-card-media">
+          <img src="https://i.ibb.co/nsB1knSN/balanced-fund.png" alt="Jubilee Balanced Fund" loading="lazy" />
+        </div>
+        <div>
+          <h3>Jubilee Balanced Fund</h3>
+          <p class="fund-desc">Designed for income plus capital growth with moderate risk.</p>
+        </div>
+        <div class="fund-meta">
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Risk Level</span>
+            <span class="fund-risk-badge fund-risk-mod">Moderate Risk</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Investment Horizon</span>
+            <span class="fund-meta-val">Medium to Long Term</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Main Goal</span>
+            <span class="fund-meta-val">Income + capital growth</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Best For</span>
+            <span class="fund-meta-val">Growth with some stability</span>
+          </div>
+        </div>
+        <button class="fund-learn-btn" type="button" data-fund-modal="balanced">Learn more</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RISK PROFILES -->
+<section class="risk-sec" id="risk">
+  <div class="inner">
+    <span class="stag">Investment Approach</span>
+    <h2 class="sec-h2">Your Investment Is Matched to Your Profile</h2>
+    <p class="sec-p">A short assessment helps match you to the right fund before you go deeper.</p>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-card-num">C</div>
+        <h3>Conservative Profile</h3>
+        <p class="risk-desc">Focus on safety, liquidity, and preserving capital.</p>
+        <div class="risk-recommended">
+          <span class="risk-rec-lbl">Recommended Match</span>
+          <a href="#funds" class="risk-fund-link">Jubilee Money Market Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-num">M</div>
+        <h3>Moderate Profile</h3>
+        <p class="risk-desc">Balance between growth potential and portfolio stability.</p>
+        <div class="risk-recommended">
+          <span class="risk-rec-lbl">Recommended Match</span>
+          <a href="#funds" class="risk-fund-link">Jubilee Balanced Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-num">A</div>
+        <h3>Growth Profile</h3>
+        <p class="risk-desc">Higher return expectations may lead to more growth-oriented balanced exposure.</p>
+        <div class="risk-recommended">
+          <span class="risk-rec-lbl">Recommended Match</span>
+          <a href="#funds" class="risk-fund-link">Jubilee Balanced Fund <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="risk-cta">
+      <button type="button" class="btn-primary" id="riskQuizOpen" style="display:inline-flex">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Check Your Investor Profile
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT PLANNER -->
+<section class="planner" id="planner">
+  <div class="inner">
+    <div class="planner-head">
+      <span class="stag">Investment Planner</span>
+      <h2 class="sec-h2">Project your growth</h2>
+      <p class="sec-p">Adjust your amount, top-up, and timeline.</p>
+    </div>
+
+    <div class="planner-shell">
+      <div class="planner-inputs">
+        <div class="planner-field">
+          <label class="planner-label" for="plannerInitial">Initial Investment</label>
+          <div class="planner-input-wrap">
+            <span class="planner-prefix">KES</span>
+            <input class="planner-input" id="plannerInitial" type="number" inputmode="numeric" min="1000" step="1000" value="10000" />
+          </div>
+          <span class="planner-field-note" id="plannerInitialNote">Minimum initial investment is KES 1,000.</span>
+        </div>
+
+        <div class="planner-field">
+          <label class="planner-label" for="plannerMonthly">Monthly Top-up</label>
+          <div class="planner-input-wrap">
+            <span class="planner-prefix">KES</span>
+            <input class="planner-input" id="plannerMonthly" type="number" inputmode="numeric" min="0" step="500" value="5000" />
+          </div>
+        </div>
+
+        <div class="planner-field">
+          <label class="planner-years-line" for="plannerYears">
+            <span>Investment Period</span>
+            <span><strong id="plannerYearsValue">5</strong> years</span>
+          </label>
+          <input class="planner-range" id="plannerYears" type="range" min="1" max="20" step="1" value="5" />
+        </div>
+
+        <div class="planner-field">
+          <label class="planner-label" for="plannerProjection">Fund Type</label>
+          <select class="planner-select" id="plannerProjection">
+            <option value="mmf">Jubilee Money Market Fund</option>
+            <option value="balanced" selected>Jubilee Balanced Fund</option>
+          </select>
+          <span class="planner-field-note" id="plannerFundNote">Jubilee Balanced Fund: Moderate risk, medium to long term. Projection uses a 12% annual estimate.</span>
+        </div>
+      </div>
+
+      <div class="planner-results">
+        <div>
+          <span class="planner-result-label">Projected Future Value</span>
+          <span class="planner-result-value" id="plannerFutureValue">KES 0</span>
+        </div>
+
+        <div class="planner-graph-card">
+          <div class="planner-graph-top">
+            <span class="planner-graph-label">Projected Growth</span>
+            <strong class="planner-graph-year" id="plannerGraphYears">5 years</strong>
+          </div>
+          <div class="planner-graph-wrap">
+            <span class="planner-graph-start" id="plannerGraphStart">KES 10K</span>
+            <span class="planner-graph-end" id="plannerGraphEnd">KES 0</span>
+            <svg class="planner-graph-svg" viewBox="0 0 360 170" preserveAspectRatio="none" aria-hidden="true">
+              <path id="plannerGraphArea" fill="rgba(126,240,170,.18)" d=""></path>
+              <path id="plannerGraphLine" fill="none" stroke="#7ef0aa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d=""></path>
+            </svg>
+          </div>
+          <div class="planner-graph-caption">
+            <span>You put in <strong id="plannerTotalInvestedInline">KES 0</strong></span>
+            <span>You earn <strong id="plannerTotalGainInline">KES 0</strong></span>
+          </div>
+        </div>
+
+        <div class="planner-stats">
+          <div>
+            <span class="planner-stat-label">Total Invested</span>
+            <strong class="planner-stat-value" id="plannerTotalInvested">KES 0</strong>
+          </div>
+          <div>
+            <span class="planner-stat-label">Estimated Growth</span>
+            <strong class="planner-stat-value" id="plannerTotalGain">KES 0</strong>
+          </div>
+        </div>
+
+        <p class="planner-disclaimer">Projections are estimates and not guaranteed. Returns may vary based on market performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fund-modal" id="fundDetailModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="fundDetailTitle">
+  <div class="fund-modal-panel fund-detail-panel">
+    <div class="fund-detail-shell">
+      <div class="fund-detail-header">
+        <div class="fund-detail-header-main">
+          <div class="fund-detail-iconbox" id="fundDetailIconBox"></div>
+          <div>
+            <span class="fund-detail-risk low" id="fundDetailRisk">Low Risk</span>
+            <h3 class="fund-detail-title" id="fundDetailTitle">Jubilee Money Market Fund</h3>
+          </div>
+        </div>
+        <button class="fund-modal-close" type="button" id="fundDetailClose" aria-label="Close fund details modal">&times;</button>
+      </div>
+
+      <div class="fund-detail-content custom-scrollbar">
+        <div class="fund-detail-stats">
+          <div class="fund-detail-stat">
+            <span class="fund-detail-stat-label" id="fundDetailStatOneLabel">Fund Focus</span>
+            <span class="fund-detail-stat-value" id="fundDetailStatOneValue">Liquidity</span>
+            <span class="fund-detail-stat-note" id="fundDetailStatOneNote">Built for capital preservation and quick access.</span>
+          </div>
+          <div class="fund-detail-stat">
+            <span class="fund-detail-stat-label" id="fundDetailStatTwoLabel">Minimum Investment</span>
+            <span class="fund-detail-stat-value" id="fundDetailStatTwoValue">KES 1,000</span>
+            <span class="fund-detail-stat-note" id="fundDetailStatTwoNote">Current public minimum entry point.</span>
+          </div>
+          <div class="fund-detail-stat">
+            <span class="fund-detail-stat-label" id="fundDetailStatThreeLabel">Time Horizon</span>
+            <span class="fund-detail-stat-value" id="fundDetailStatThreeValue">Short Term</span>
+            <span class="fund-detail-stat-note" id="fundDetailStatThreeNote">Recommended holding period.</span>
+          </div>
+        </div>
+
+        <div class="fund-detail-card full-width">
+          <h5>Who is this for?</h5>
+          <div class="fund-detail-list" id="fundDetailWhoFor"></div>
+        </div>
+
+        <div class="fund-detail-grid">
+          <div class="fund-detail-col">
+            <section class="fund-detail-section">
+              <h4>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                Investment Strategy
+              </h4>
+              <p id="fundDetailDescription">Ideal for emergency funds and short-term goals.</p>
+            </section>
+
+            <section class="fund-detail-section">
+              <h4>Asset Allocation</h4>
+              <div class="fund-detail-allocation" id="fundDetailAllocation"></div>
+            </section>
+          </div>
+
+          <div class="fund-detail-col">
+            <div class="fund-detail-facts-card">
+              <h4>Fund Facts</h4>
+              <div class="fund-detail-facts" id="fundDetailFacts"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fund-detail-footer">
+        <div class="fund-detail-footer-copy">
+          <div class="fund-detail-footer-badges">
+            <div class="fund-detail-footer-badge">CMA</div>
+            <div class="fund-detail-footer-badge">CIS</div>
+          </div>
+          <span>Regulated by the Capital Markets Authority in Kenya.</span>
+        </div>
+        <div class="fund-detail-footer-actions">
+          <button type="button" class="fund-detail-secondary" id="fundDetailFactsheetBtn">Download Factsheet</button>
+          <a href="https://jubilee-asset-intent.vercel.app/" target="_blank" rel="noopener" class="fund-detail-primary" id="fundDetailApplyBtn">Start Application</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fund-modal risk-quiz-modal" id="riskQuizModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Investor profile quiz">
+  <div class="fund-modal-panel risk-quiz-panel">
+    <div class="risk-quiz-shell">
+      <button class="fund-modal-close" type="button" aria-label="Close investor profile quiz">&times;</button>
+
+      <div class="risk-quiz-scene risk-quiz-scene-main" id="riskQuizQuestionScene" hidden>
+        <div class="risk-quiz-progress">
+          <div class="risk-quiz-progress-copy">
+            <span class="risk-quiz-step" id="riskQuizStepLabel">Question 1 of 5</span>
+            <div class="risk-quiz-step-title">Short investor profile check</div>
+          </div>
+          <div class="risk-quiz-bar" aria-hidden="true">
+            <div class="risk-quiz-bar-fill" id="riskQuizBarFill"></div>
+          </div>
+        </div>
+
+        <div class="risk-quiz-body">
+          <h4 class="risk-quiz-question" id="riskQuizQuestion"></h4>
+          <p class="risk-quiz-help" id="riskQuizHelp"></p>
+          <div class="risk-quiz-options" id="riskQuizOptions"></div>
+        </div>
+
+        <div class="risk-quiz-footer">
+          <p class="risk-quiz-footnote">This is a guide only. Final suitability is confirmed during the application process.</p>
+          <div class="risk-quiz-nav">
+            <button type="button" class="risk-quiz-link-btn" id="riskQuizBack">Previous</button>
+            <button type="button" class="risk-quiz-link-btn" id="riskQuizReset">Start over</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="risk-quiz-scene risk-quiz-scene-analyzing" id="riskQuizAnalyzingScene" hidden>
+        <div class="risk-quiz-spinner" aria-hidden="true"></div>
+        <h4>Analyzing your profile</h4>
+        <p>Matching your answers to the most likely Jubilee fund fit.</p>
+      </div>
+
+      <div class="risk-quiz-scene" id="riskQuizResultScene" hidden>
+        <div class="risk-quiz-result">
+        <div class="risk-quiz-result-layout">
+          <div class="risk-quiz-result-visual">
+            <div class="risk-quiz-result-image-wrap">
+              <img id="riskQuizResultImage" src="https://i.ibb.co/tTRtnkLv/hero-uganda-businesswoman.jpg" alt="Suggested investor profile" />
+              <div class="risk-quiz-result-image-overlay">
+                <span class="risk-quiz-result-kicker">Suggested profile</span>
+                <h4 id="riskQuizResultProfileTitle">Conservative Profile</h4>
+              </div>
+            </div>
+            <div class="risk-quiz-result-summary">
+              <h5>Why this may fit</h5>
+              <p id="riskQuizResultReason"></p>
+            </div>
+          </div>
+          <div class="risk-quiz-result-main">
+            <div class="risk-quiz-result-heading">
+              <span class="fund-modal-kicker">Top Recommendation</span>
+              <h4 id="riskQuizResultFund">Jubilee Money Market Fund</h4>
+              <p id="riskQuizResultFundDetails"></p>
+            </div>
+            <div class="risk-quiz-result-facts">
+              <div class="risk-quiz-result-fact">
+                <span>Profile</span>
+                <strong id="riskQuizResultProfile">Conservative</strong>
+              </div>
+              <div class="risk-quiz-result-fact">
+                <span>Best For</span>
+                <strong id="riskQuizResultScore">Short-term goals</strong>
+              </div>
+              <div class="risk-quiz-result-fact">
+                <span>Typical Fit</span>
+                <strong id="riskQuizResultHorizon">Short Term</strong>
+              </div>
+            </div>
+            <p class="risk-quiz-result-note">This result is based on your answers and should not be treated as personal investment advice.</p>
+            <div class="risk-quiz-result-actions">
+              <a href="https://jubilee-asset-intent.vercel.app/" target="_blank" rel="noopener" class="btn-primary risk-quiz-primary-link" id="riskQuizApplyBtn">Start Application</a>
+              <button type="button" class="risk-quiz-secondary" id="riskQuizFundBtn" data-fund-modal="mmf">Learn About This Fund</button>
+            </div>
+          </div>
+        </div>
+        <div class="risk-quiz-actionbar">
+          <div class="risk-quiz-actionset">
+            <a href="#" class="risk-quiz-text-action" id="riskQuizSaveBtn">Save Result</a>
+            <a href="#" class="risk-quiz-text-action" id="riskQuizShareBtn">Share</a>
+            <a href="#" class="risk-quiz-text-action" id="riskQuizDownloadBtn">Download</a>
+          </div>
+          <div class="risk-quiz-actionmeta">
+            <p class="risk-quiz-status" id="riskQuizStatus" aria-live="polite"></p>
+            <a href="#" class="risk-quiz-text-action risk-quiz-retake" id="riskQuizRetakeBtn">Retake Quiz</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BEFORE YOU APPLY -->
+<section class="before" id="apply">
+  <div class="inner">
+    <div id="before"></div>
+    <span class="stag">Before You Apply</span>
+    <h2 class="sec-h2">Before You Apply</h2>
+    <p class="sec-p">Make sure you are eligible and keep the key application details ready before you begin.</p>
+    <div class="before-cards">
+      <div class="before-main">
+        <div class="before-layout">
+          <div class="cl-list">
+
+            <div class="cl-row">
+              <div class="cl-num">1</div>
+              <div class="cl-body">
+                <div class="cl-title">Identity Details</div>
+                <p class="cl-desc">Keep your National ID or Passport details ready.</p>
+              </div>
+            </div>
+
+            <div class="cl-row">
+              <div class="cl-num">2</div>
+              <div class="cl-body">
+                <div class="cl-title">Contact and Occupation Details</div>
+                <p class="cl-desc">Prepare your phone, email, employer, occupation, and income details.</p>
+              </div>
+            </div>
+
+            <div class="cl-row">
+              <div class="cl-num">3</div>
+              <div class="cl-body">
+                <div class="cl-title">Bank Details</div>
+                <p class="cl-desc">Have your bank account number and bank information ready.</p>
+              </div>
+            </div>
+
+            <div class="cl-row">
+              <div class="cl-num">4</div>
+              <div class="cl-body">
+                <div class="cl-title">Source of Funds</div>
+                <p class="cl-desc">Be ready to confirm whether the funds come from salary, business income, or savings.</p>
+              </div>
+            </div>
+
+            <div class="cl-row">
+              <div class="cl-num">5</div>
+              <div class="cl-body">
+                <div class="cl-title">Tax Information</div>
+                <p class="cl-desc">Prepare your KRA PIN and any FATCA or CRS tax details (tax residency checks).</p>
+              </div>
+            </div>
+
+            <div class="cl-row">
+              <div class="cl-num">6</div>
+              <div class="cl-body">
+                <div class="cl-title">Investment Details</div>
+                <p class="cl-desc">Decide on your fund choice, amount, and preferred payment method.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <aside class="before-elig-card">
+       
+        <h3>Make sure you are eligible</h3>
+        <div class="before-elig-list">
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Individuals aged 18+</strong> and joint applicants can apply.</span>
+          </div>
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Parents or guardians</strong> may apply on behalf of minors.</span>
+          </div>
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>Corporate and institutional investors</strong> are also eligible.</span>
+          </div>
+          <div class="before-elig-item">
+            <div class="before-elig-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span><strong>KYC, funding checks, and fund selection</strong> should be ready before submission.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="inner">
+    <div class="faq-hdr">
+      <span class="stag">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers for investors comparing the funds, assessing fit, and understanding the pre-application process.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q"><span>What are the main public retail fund options here?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a">For this landing page, the clearest retail fund choices are the Money Market Fund and the Balanced Fund. The Money Market Fund is positioned as the flagship retail option, while the Balanced Fund is the more growth-oriented alternative.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Why should the money market fund lead the retail story?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a">The money market fund is the clearest starting point for most retail investors because it is built around liquidity, lower risk, and capital preservation. The Balanced Fund still matters, but it suits investors who can accept more market movement for growth potential.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What does each fund invest in?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a">The Money Market Fund is designed for liquid, lower-risk income assets such as deposits, treasury bills, and other short-duration money market instruments. The Balanced Fund is different: it combines listed shares, debt, government securities, and money market instruments, so it is better understood as a mixed growth-and-income portfolio.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>How liquid is the money market fund, and are returns guaranteed?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a">The money market fund is positioned as a liquidity-focused option, and public summaries commonly cite about 3 business days for withdrawals. More importantly, returns should never be treated as guaranteed. Yields and prices can change over time, and past performance is not a promise of future results.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>How does the application journey work before full onboarding?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a">The public journey appears to begin with basic lead capture and then move into forms or assisted onboarding. The safest pre-application guidance is to keep your full name, mobile number, email address, location, chosen fund, contribution amount, and preferred contribution method ready, then refer to the official application form for the full list of supporting documents and declarations.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What disclosures should investors keep in mind?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a">This unit-trust offer should be understood as a Kenya investment product regulated by the Capital Markets Authority. Withholding tax may apply on dividend and interest, and unit values or yields may rise or fall with market conditions. Performance should be monitored through official reporting materials rather than through any promise of fixed returns.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-bg" id="start">
+  <div class="cta-inner">
+    <div class="cta-top">
+      <div class="cta-top-copy">
+        <span class="stag">Start Today</span>
+        <h2>Clear fund choices for disciplined investing.</h2>
+      </div>
+      <div class="cta-metrics" aria-label="Key highlights">
+        <div class="cta-metric">
+          <span class="cta-metric-value">2</span>
+          <span class="cta-metric-label">Fund options</span>
+        </div>
+        <div class="cta-metric">
+          <span class="cta-metric-value">KES 1,000</span>
+          <span class="cta-metric-label">Starting point</span>
+        </div>
+        <div class="cta-metric">
+          <span class="cta-metric-value">CMA</span>
+          <span class="cta-metric-label">Regulated in Kenya</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-panel">
+      <div class="cta-panel-copy">
+        <h3>Ready to invest? Start here.</h3>
+        <p>Open your Jubilee unit trust account in minutes — no branch visit, no paperwork, just a few simple steps.</p>
+        <div class="cta-btns">
+          <a href="https://jubilee-asset-intent.vercel.app/" target="_blank" rel="noopener" class="btn-cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Start Application
+          </a>
+          <a href="#funds" class="btn-cta-ghost">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            View Funds
+          </a>
+        </div>
+      </div>
+      <div class="cta-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m8.5 12.5 2.2 2.2 4.8-5.2"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="ft-logo-row">
+          <div class="ft-logo">
+            <img src="https://jubileeinsurance.com/ug/wp-content/themes/jubilee/assets/images/jubilee-logo.png" alt="Jubilee Asset Management" loading="lazy" />
+          </div>
+          <div class="ft-divider"></div>
+          <a href="https://www.nxt.pe" target="_blank" rel="noopener" class="ft-nxtpe-wrap" title="Powered by NxtPe">
+            <img src="https://www.nxt.pe/assets/nxtpeLogo.png" alt="NxtPe" />
+          </a>
+        </div>
+        <p>Jubilee Asset Management offers professionally managed unit trust funds in Kenya built for liquidity, income, and long-term growth.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#funds">Our Funds</a></li>
+          <li><a href="#planner">Planner</a></li>
+          <li><a href="#apply">Before You Apply</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Application</h4>
+        <ul>
+          <li><a href="#apply">Before You Apply</a></li>
+          <li><a href="#how-it-works">Investor Journey</a></li>
+          <li><a href="#planner">Investment Planner</a></li>
+          <li><a href="#start">Start Today</a></li>
+          <li><a href="#benefits">What Is a Unit Trust</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">&copy; 2026 Jubilee Asset Management. All rights reserved.</span>
+      <span class="ft-reg">Regulated by Capital Markets Authority (Kenya) &middot; Past performance is not indicative of future results</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hero Carousel
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('#heroCarousel .hero-slide'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('#heroDots .hero-dot'));
+  var cur = 0, total = slides.length, timer;
+  if(!slides.length || !dots.length){ return; }
+  function goTo(n){
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + total) % total;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+  function autoPlay(){ timer = setInterval(function(){ goTo(cur + 1); }, 5000); }
+  function reset(){ clearInterval(timer); autoPlay(); }
+  dots.forEach(function(d, i){ d.addEventListener('click', function(){ goTo(i); reset(); }); });
+  var el = document.getElementById('heroCarousel');
+  if(el){
+    el.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    el.addEventListener('mouseleave', autoPlay);
+  }
+  autoPlay();
+})();
+
+// FAQ Accordion
+Array.prototype.slice.call(document.querySelectorAll('.faq-q')).forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    Array.prototype.slice.call(document.querySelectorAll('.faq-item.open')).forEach(function(el){
+      el.classList.remove('open');
+    });
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+// Mobile Nav Toggle
+var burger = document.getElementById('navBurger');
+var navLinks = document.getElementById('navLinks');
+if(burger && navLinks){
+  function setNavOpen(open){
+    navLinks.classList.toggle('nav-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  burger.addEventListener('click', function(){
+    setNavOpen(!navLinks.classList.contains('nav-open'));
+  });
+  Array.prototype.slice.call(document.querySelectorAll('.nav-links a')).forEach(function(a){
+    a.addEventListener('click', function(){ setNavOpen(false); });
+  });
+}
+
+// Smooth Scroll
+Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){
+  a.addEventListener('click', function(e){
+    var href = a.getAttribute('href');
+    if(!href || href === '#') return;
+    var target = document.querySelector(href);
+    if(target){
+      e.preventDefault();
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    }
+  });
+});
+
+// Keyboard Section Paging
+(function(){
+  var sections = Array.prototype.slice.call(document.querySelectorAll('body > section'));
+  if(!sections.length){ return; }
+
+  function getScrollOffset(){
+    var nav = document.querySelector('.nav');
+    return nav ? nav.offsetHeight + 8 : 80;
+  }
+
+  function getSectionTop(section){
+    return section.getBoundingClientRect().top + window.scrollY - getScrollOffset();
+  }
+
+  function getCurrentSectionIndex(){
+    var marker = window.scrollY + getScrollOffset() + 24;
+    var closestIndex = 0;
+    var closestDistance = Infinity;
+    sections.forEach(function(section, index){
+      var distance = Math.abs(section.offsetTop - marker);
+      if(distance < closestDistance){
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+    return closestIndex;
+  }
+
+  function hasOpenModal(){
+    return !!document.querySelector('.fund-modal.open');
+  }
+
+  function isTypingTarget(target){
+    if(!target){ return false; }
+    return !!target.closest('input, textarea, select, [contenteditable="true"]');
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey){ return; }
+    if(isTypingTarget(e.target) || hasOpenModal()){ return; }
+    if(e.key !== 'PageDown' && e.key !== 'PageUp'){ return; }
+
+    var currentIndex = getCurrentSectionIndex();
+    var nextIndex = e.key === 'PageDown'
+      ? Math.min(currentIndex + 1, sections.length - 1)
+      : Math.max(currentIndex - 1, 0);
+
+    if(nextIndex === currentIndex){ return; }
+
+    e.preventDefault();
+    window.scrollTo({
+      top: getSectionTop(sections[nextIndex]),
+      behavior: 'smooth'
+    });
+  });
+})();
+
+// Investment Planner
+(function(){
+  var initialInput = document.getElementById('plannerInitial');
+  var monthlyInput = document.getElementById('plannerMonthly');
+  var yearsInput = document.getElementById('plannerYears');
+  var projectionSelect = document.getElementById('plannerProjection');
+  var initialNoteEl = document.getElementById('plannerInitialNote');
+  var fundNoteEl = document.getElementById('plannerFundNote');
+  var yearsValueEl = document.getElementById('plannerYearsValue');
+  var futureValueEl = document.getElementById('plannerFutureValue');
+  var totalInvestedEl = document.getElementById('plannerTotalInvested');
+  var totalGainEl = document.getElementById('plannerTotalGain');
+  var totalInvestedInlineEl = document.getElementById('plannerTotalInvestedInline');
+  var totalGainInlineEl = document.getElementById('plannerTotalGainInline');
+  var graphYearsEl = document.getElementById('plannerGraphYears');
+  var graphStartEl = document.getElementById('plannerGraphStart');
+  var graphEndEl = document.getElementById('plannerGraphEnd');
+  var graphLineEl = document.getElementById('plannerGraphLine');
+  var graphAreaEl = document.getElementById('plannerGraphArea');
+
+  if(!initialInput || !monthlyInput || !yearsInput || !projectionSelect){ return; }
+
+  var projections = {
+    mmf: {
+      label: 'Jubilee Money Market Fund',
+      rate: 0.09,
+      risk: 'Low risk',
+      horizon: 'short-term',
+      note: 'Projection uses a 9% annual estimate.'
+    },
+    balanced: {
+      label: 'Jubilee Balanced Fund',
+      rate: 0.12,
+      risk: 'Moderate risk',
+      horizon: 'medium to long term',
+      note: 'Projection uses a 12% annual estimate.'
+    }
+  };
+
+  function syncProjectionOptions(years){
+    var previousValue = projectionSelect.value;
+    if(years < 3){
+      projectionSelect.innerHTML = '<option value="mmf">Jubilee Money Market Fund</option>';
+      projectionSelect.value = 'mmf';
+      return;
+    }
+
+    projectionSelect.innerHTML = '<option value="mmf">Jubilee Money Market Fund</option><option value="balanced">Jubilee Balanced Fund</option>';
+    projectionSelect.value = previousValue === 'mmf' ? 'mmf' : 'balanced';
+  }
+
+  function updateFundNote(projectionKey, years){
+    if(fundNoteEl){
+      var projection = projections[projectionKey] || projections.mmf;
+      var message = projection.label + ': ' + projection.risk + ', ' + projection.horizon + '. ' + projection.note;
+      if(years < 3){
+        message += ' Jubilee Balanced Fund appears from 3 years and above.';
+      }
+      fundNoteEl.textContent = message;
+    }
+  }
+
+  function formatCurrency(value){
+    return 'KES ' + Math.round(value).toLocaleString('en-KE');
+  }
+
+  function formatCompactCurrency(value){
+    var rounded = Math.round(value);
+    if(rounded >= 1000000){
+      return 'KES ' + (rounded / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
+    if(rounded >= 1000){
+      return 'KES ' + (rounded / 1000).toFixed(0) + 'K';
+    }
+    return 'KES ' + rounded.toLocaleString('en-KE');
+  }
+
+  function getProjectionValue(principal, monthlyTopup, years, rate){
+    var monthlyRate = rate / 12;
+    var totalMonths = years * 12;
+    var futurePrincipal = principal * Math.pow(1 + monthlyRate, totalMonths);
+    var futureTopups = monthlyTopup * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate);
+    return futurePrincipal + futureTopups;
+  }
+
+  function buildProjectionSeries(principal, monthlyTopup, years, rate){
+    var points = [];
+    var totalMonths = years * 12;
+    var monthlyRate = rate / 12;
+    var balance = principal;
+    var step = Math.max(1, Math.round(totalMonths / 7));
+
+    points.push(balance);
+    for(var month = 1; month <= totalMonths; month += 1){
+      balance = (balance + monthlyTopup) * (1 + monthlyRate);
+      if(month === totalMonths || month % step === 0){
+        points.push(balance);
+      }
+    }
+    return points;
+  }
+
+  function renderGraph(values){
+    if(!graphLineEl || !graphAreaEl || !values.length){ return; }
+    var width = 360;
+    var height = 170;
+    var padX = 14;
+    var padTop = 14;
+    var padBottom = 12;
+    var min = Math.min.apply(null, values);
+    var max = Math.max.apply(null, values);
+    var spread = Math.max(max - min, 1);
+    var usableWidth = width - (padX * 2);
+    var usableHeight = height - padTop - padBottom;
+
+    var coords = values.map(function(value, index){
+      var x = padX + (values.length === 1 ? usableWidth : (usableWidth * index / (values.length - 1)));
+      var y = padTop + usableHeight - (((value - min) / spread) * usableHeight);
+      return [x, y];
+    });
+
+    var linePath = 'M' + coords.map(function(point){ return point[0].toFixed(2) + ' ' + point[1].toFixed(2); }).join(' L');
+    var areaPath = linePath + ' L' + coords[coords.length - 1][0].toFixed(2) + ' ' + (height - padBottom).toFixed(2) + ' L' + coords[0][0].toFixed(2) + ' ' + (height - padBottom).toFixed(2) + ' Z';
+
+    graphLineEl.setAttribute('d', linePath);
+    graphAreaEl.setAttribute('d', areaPath);
+  }
+
+  function updatePlanner(){
+    var rawPrincipal = parseFloat(initialInput.value);
+    var monthlyTopup = Math.max(0, parseFloat(monthlyInput.value) || 0);
+    var years = Math.max(1, parseInt(yearsInput.value, 10) || 1);
+    var hasInitialError = isNaN(rawPrincipal) || rawPrincipal < 1000;
+    var principal = hasInitialError ? 1000 : rawPrincipal;
+
+    syncProjectionOptions(years);
+    var projectionKey = projectionSelect.value in projections ? projectionSelect.value : 'balanced';
+    var projection = projections[projectionKey];
+    var totalInvested = principal + (monthlyTopup * 12 * years);
+    var futureValue = getProjectionValue(principal, monthlyTopup, years, projection.rate);
+    var totalGain = futureValue - totalInvested;
+    var series = buildProjectionSeries(principal, monthlyTopup, years, projection.rate);
+
+    yearsValueEl.textContent = years;
+    graphYearsEl.textContent = years + (years === 1 ? ' year' : ' years');
+    futureValueEl.textContent = formatCurrency(futureValue);
+    totalInvestedEl.textContent = formatCurrency(totalInvested);
+    totalGainEl.textContent = formatCurrency(totalGain);
+    if(initialInput){
+      initialInput.classList.toggle('is-error', hasInitialError);
+    }
+    if(initialNoteEl){
+      initialNoteEl.textContent = hasInitialError
+        ? 'Enter at least KES 1,000 to continue this projection.'
+        : 'Minimum initial investment is KES 1,000.';
+      initialNoteEl.classList.toggle('error', hasInitialError);
+    }
+    if(totalInvestedInlineEl){ totalInvestedInlineEl.textContent = formatCompactCurrency(totalInvested); }
+    if(totalGainInlineEl){ totalGainInlineEl.textContent = formatCompactCurrency(totalGain); }
+    if(graphStartEl){ graphStartEl.textContent = formatCompactCurrency(series[0] || 0); }
+    if(graphEndEl){ graphEndEl.textContent = formatCompactCurrency(futureValue); }
+    updateFundNote(projectionKey, years);
+    renderGraph(series);
+  }
+
+  initialInput.addEventListener('blur', function(){
+    var value = parseFloat(initialInput.value);
+    if(isNaN(value) || value < 1000){
+      initialInput.value = '1000';
+      updatePlanner();
+    }
+  });
+
+  [initialInput, monthlyInput, yearsInput, projectionSelect].forEach(function(field){
+    field.addEventListener('input', updatePlanner);
+    field.addEventListener('change', updatePlanner);
+  });
+
+  updatePlanner();
+})();
+
+// Fund Modals
+(function(){
+  var fundData = {
+    mmf: {
+      title: 'Jubilee Money Market Fund',
+      risk: 'Low Risk',
+      riskClass: 'low',
+      iconBg: 'var(--primary)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+      statOneLabel: 'Fund Focus',
+      statOneValue: 'Liquidity',
+      statOneNote: 'Built for capital preservation and quicker access to cash.',
+      statTwoLabel: 'Minimum Investment',
+      statTwoValue: 'KES 1,000',
+      statTwoNote: 'Public minimum lump-sum entry point.',
+      statThreeLabel: 'Time Horizon',
+      statThreeValue: 'Short Term',
+      statThreeNote: 'Suitable when you may need the money sooner.',
+      description: 'A lower-risk unit trust designed for capital preservation, steady income, and easier access to your money than a growth-oriented fund.',
+      allocation: [
+        { label: 'Fixed deposits', value: '51%', color: 'var(--primary)' },
+        { label: 'Government securities', value: '35%', color: '#a00a29' },
+        { label: 'Cash and demand deposits', value: '12%', color: '#e8a9b3' },
+        { label: 'Other securities', value: '2%', color: '#cbd5e1' }
+      ],
+      facts: [
+        { label: 'Management Fee', value: 'Up to 2% p.a.' },
+        { label: 'Upfront Fee', value: 'No initial fee' },
+        { label: 'Withdrawal Timeline', value: '~2 to 3 business days' },
+        { label: 'Top Ups', value: 'From KES 1,000' }
+      ],
+      whoFor: [
+        'Investors who want a steadier place for short-term cash.',
+        'Emergency funds and savings you may need to access soon.',
+        'First-time investors starting with a lower-risk fund.'
+      ],
+      downloadTitle: 'Jubilee Money Market Fund Summary',
+      downloadLines: [
+        'Jubilee Asset Management',
+        'Jubilee Money Market Fund',
+        '',
+        'Risk: Low Risk',
+        'Minimum investment: KES 1,000',
+        'Time horizon: Short Term',
+        'Management fee: Up to 2% p.a.',
+        'Upfront fee: No initial fee',
+        'Withdrawal timeline: Approximately 2 to 3 business days',
+        '',
+        'This fund is designed for liquidity, capital preservation, and steady income.'
+      ]
+    },
+    balanced: {
+      title: 'Jubilee Balanced Fund',
+      risk: 'Moderate Risk',
+      riskClass: 'moderate',
+      iconBg: 'var(--accent)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.05" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 7 4 13h6L7 7Zm10 0-3 6h6l-3-6Z"/><path d="M6 17h12"/></svg>',
+      statOneLabel: 'Fund Focus',
+      statOneValue: 'Income + Growth',
+      statOneNote: 'Blends listed shares with income assets for a more growth-oriented path.',
+      statTwoLabel: 'Minimum Investment',
+      statTwoValue: 'KES 1,000',
+      statTwoNote: 'Public minimum lump-sum entry point.',
+      statThreeLabel: 'Time Horizon',
+      statThreeValue: 'Medium to Long Term',
+      statThreeNote: 'Better suited when you can stay invested for longer.',
+      description: 'A moderate-risk fund built for investors who want a mix of income and capital growth and can accept more market movement than a money market fund.',
+      allocation: [
+        { label: 'Government securities', value: '36%', color: 'var(--accent)' },
+        { label: 'Listed equities', value: '33%', color: '#a00a29' },
+        { label: 'Cash and demand deposits', value: '26%', color: '#f59e0b' },
+        { label: 'Fixed deposits', value: '5%', color: '#fecaca' }
+      ],
+      facts: [
+        { label: 'Management Fee', value: 'Up to 2% p.a.' },
+        { label: 'Upfront Fee', value: '4% upfront fee' },
+        { label: 'Top Ups', value: 'From KES 1,000' },
+        { label: 'Contribution Methods', value: 'Bank, direct debit, standing order, M-Pesa' }
+      ],
+      whoFor: [
+        'Investors looking for a balance of income and long-term growth.',
+        'People comfortable with moderate market-linked movement.',
+        'Goals that do not need the money back immediately.'
+      ],
+      downloadTitle: 'Jubilee Balanced Fund Summary',
+      downloadLines: [
+        'Jubilee Asset Management',
+        'Jubilee Balanced Fund',
+        '',
+        'Risk: Moderate Risk',
+        'Minimum investment: KES 1,000',
+        'Time horizon: Medium to Long Term',
+        'Management fee: Up to 2% p.a.',
+        'Upfront fee: 4% upfront fee',
+        'Contribution methods: Bank deposit, direct debit, standing order, M-Pesa',
+        '',
+        'This fund is designed for investors seeking a mix of income and capital growth.'
+      ]
+    }
+  };
+  var openButtons = Array.prototype.slice.call(document.querySelectorAll('[data-fund-modal]'));
+  var modal = document.getElementById('fundDetailModal');
+  if(!modal){ return; }
+  var panel = modal.querySelector('.fund-detail-panel');
+  var closeBtn = document.getElementById('fundDetailClose');
+  var iconBox = document.getElementById('fundDetailIconBox');
+  var riskEl = document.getElementById('fundDetailRisk');
+  var titleEl = document.getElementById('fundDetailTitle');
+  var statOneLabelEl = document.getElementById('fundDetailStatOneLabel');
+  var statOneValueEl = document.getElementById('fundDetailStatOneValue');
+  var statOneNoteEl = document.getElementById('fundDetailStatOneNote');
+  var statTwoLabelEl = document.getElementById('fundDetailStatTwoLabel');
+  var statTwoValueEl = document.getElementById('fundDetailStatTwoValue');
+  var statTwoNoteEl = document.getElementById('fundDetailStatTwoNote');
+  var statThreeLabelEl = document.getElementById('fundDetailStatThreeLabel');
+  var statThreeValueEl = document.getElementById('fundDetailStatThreeValue');
+  var statThreeNoteEl = document.getElementById('fundDetailStatThreeNote');
+  var descriptionEl = document.getElementById('fundDetailDescription');
+  var allocationEl = document.getElementById('fundDetailAllocation');
+  var factsEl = document.getElementById('fundDetailFacts');
+  var whoForEl = document.getElementById('fundDetailWhoFor');
+  var factsheetBtn = document.getElementById('fundDetailFactsheetBtn');
+  var applyBtn = document.getElementById('fundDetailApplyBtn');
+  var activeModal = null;
+  var activeFund = null;
+
+  function setModalOpen(modal, open){
+    if(!modal) return;
+    modal.classList.toggle('open', open);
+    modal.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.style.overflow = open ? 'hidden' : '';
+    activeModal = open ? modal : null;
+  }
+
+  function checkIcon(){
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  }
+
+  function populateModal(key){
+    var data = fundData[key];
+    if(!data){ return; }
+    activeFund = data;
+    iconBox.style.background = data.iconBg;
+    iconBox.innerHTML = data.icon;
+    riskEl.textContent = data.risk;
+    riskEl.className = 'fund-detail-risk ' + data.riskClass;
+    titleEl.textContent = data.title;
+    statOneLabelEl.textContent = data.statOneLabel;
+    statOneValueEl.textContent = data.statOneValue;
+    statOneNoteEl.textContent = data.statOneNote;
+    statTwoLabelEl.textContent = data.statTwoLabel;
+    statTwoValueEl.textContent = data.statTwoValue;
+    statTwoNoteEl.textContent = data.statTwoNote;
+    statThreeLabelEl.textContent = data.statThreeLabel;
+    statThreeValueEl.textContent = data.statThreeValue;
+    statThreeNoteEl.textContent = data.statThreeNote;
+    descriptionEl.textContent = data.description;
+    allocationEl.innerHTML = data.allocation.map(function(item){
+      return '<div class="fund-detail-allocation-item"><div class="fund-detail-allocation-row"><span>' + item.label + '</span><strong>' + item.value + '</strong></div><div class="fund-detail-allocation-track"><div class="fund-detail-allocation-fill" style="width:' + item.value + ';background:' + item.color + '"></div></div></div>';
+    }).join('');
+    factsEl.innerHTML = data.facts.map(function(item){
+      return '<div class="fund-detail-fact"><span>' + item.label + '</span><strong>' + item.value + '</strong></div>';
+    }).join('');
+    whoForEl.innerHTML = data.whoFor.map(function(item){
+      return '<div class="fund-detail-list-item">' + checkIcon() + '<span>' + item + '</span></div>';
+    }).join('');
+  }
+
+  function downloadFactsheet(){
+    if(!activeFund){ return; }
+    var blob = new Blob([activeFund.downloadLines.join('\r\n')], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = activeFund.downloadTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  openButtons.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      if(btn.tagName === 'A'){ e.preventDefault(); }
+      var key = btn.getAttribute('data-fund-modal');
+      populateModal(key);
+      setModalOpen(modal, true);
+    });
+  });
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      setModalOpen(modal, false);
+    });
+  }
+
+  modal.addEventListener('click', function(e){
+    if(e.target === modal){
+      setModalOpen(modal, false);
+    }
+  });
+
+  if(factsheetBtn){
+    factsheetBtn.addEventListener('click', function(){
+      downloadFactsheet();
+    });
+  }
+
+  if(applyBtn){
+    applyBtn.addEventListener('click', function(){
+      setModalOpen(modal, false);
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && activeModal){
+      setModalOpen(activeModal, false);
+    }
+  });
+})();
+
+// Risk Profile Quiz
+(function(){
+  var storageKey = 'jubileeRiskQuizResult';
+  var quizModal = document.getElementById('riskQuizModal');
+  var openBtns = Array.prototype.slice.call(document.querySelectorAll('#riskQuizOpen, .open-risk-quiz'));
+  if(!quizModal || !openBtns.length){ return; }
+
+  var closeBtn = quizModal.querySelector('.fund-modal-close');
+  var questionScene = document.getElementById('riskQuizQuestionScene');
+  var analyzingScene = document.getElementById('riskQuizAnalyzingScene');
+  var resultScene = document.getElementById('riskQuizResultScene');
+  var stepLabel = document.getElementById('riskQuizStepLabel');
+  var barFill = document.getElementById('riskQuizBarFill');
+  var questionEl = document.getElementById('riskQuizQuestion');
+  var helpEl = document.getElementById('riskQuizHelp');
+  var optionsEl = document.getElementById('riskQuizOptions');
+  var backBtn = document.getElementById('riskQuizBack');
+  var resetBtn = document.getElementById('riskQuizReset');
+  var saveBtn = document.getElementById('riskQuizSaveBtn');
+  var downloadBtn = document.getElementById('riskQuizDownloadBtn');
+  var shareBtn = document.getElementById('riskQuizShareBtn');
+  var retakeBtn = document.getElementById('riskQuizRetakeBtn');
+  var applyBtn = document.getElementById('riskQuizApplyBtn');
+  var fundBtn = document.getElementById('riskQuizFundBtn');
+  var statusEl = document.getElementById('riskQuizStatus');
+  var resultFundEl = document.getElementById('riskQuizResultFund');
+  var resultReasonEl = document.getElementById('riskQuizResultReason');
+  var resultProfileEl = document.getElementById('riskQuizResultProfile');
+  var resultProfileTitleEl = document.getElementById('riskQuizResultProfileTitle');
+  var resultScoreEl = document.getElementById('riskQuizResultScore');
+  var resultHorizonEl = document.getElementById('riskQuizResultHorizon');
+  var resultImageEl = document.getElementById('riskQuizResultImage');
+  var resultFundDetailsEl = document.getElementById('riskQuizResultFundDetails');
+
+  var questions = [
+    {
+      question: 'How long do you want to keep this money invested?',
+      help: 'Your time horizon helps determine whether liquidity or longer-term growth should lead the decision.',
+      options: [
+        { label: '0 to 1 year', detail: 'You may need the money soon.', score: 1 },
+        { label: '1 to 3 years', detail: 'You can leave it invested for a while.', score: 2 },
+        { label: 'More than 3 years', detail: 'You are investing with a longer view.', score: 3 }
+      ]
+    },
+    {
+      question: 'What matters most to you right now?',
+      help: 'Pick the outcome that feels closest to your current goal.',
+      options: [
+        { label: 'Keeping my money stable', detail: 'Stability matters more than chasing higher returns.', score: 1 },
+        { label: 'A balance of stability and growth', detail: 'You want some growth without going too far out on risk.', score: 2 },
+        { label: 'Growing my money over time', detail: 'You are comfortable focusing more on longer-term upside.', score: 3 }
+      ]
+    },
+    {
+      question: 'If your investment value dropped for a short period, what would you do?',
+      help: 'Your reaction to short-term movement says a lot about your risk comfort.',
+      options: [
+        { label: 'Move my money out', detail: 'You would prefer to avoid further declines.', score: 1 },
+        { label: 'Wait and see', detail: 'You could stay calm for a while.', score: 2 },
+        { label: 'Stay invested or add more', detail: 'You can accept short-term movement for longer-term goals.', score: 3 }
+      ]
+    },
+    {
+      question: 'When are you most likely to need this money?',
+      help: 'The sooner you may need it, the more flexibility and liquidity usually matter.',
+      options: [
+        { label: 'Anytime soon', detail: 'Access matters a lot.', score: 1 },
+        { label: 'Maybe within the next 1 to 3 years', detail: 'You have some room to stay invested.', score: 2 },
+        { label: 'Not for a while', detail: 'You can let it work over a longer period.', score: 3 }
+      ]
+    },
+    {
+      question: 'How would you describe your comfort with investment risk?',
+      help: 'Choose the level that feels most natural to you, not the one that sounds best on paper.',
+      options: [
+        { label: 'Low', detail: 'You prefer steadier outcomes and lower risk.', score: 1 },
+        { label: 'Moderate', detail: 'You can accept some movement for better potential returns.', score: 2 },
+        { label: 'High', detail: 'You are comfortable with more ups and downs.', score: 3 }
+      ]
+    }
+  ];
+
+  var currentQuestion = 0;
+  var answers = [];
+  var latestResult = null;
+  var analyzeTimer = null;
+
+  function setOpen(open){
+    quizModal.classList.toggle('open', open);
+    quizModal.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function clearAnalyzeTimer(){
+    if(analyzeTimer){
+      window.clearTimeout(analyzeTimer);
+      analyzeTimer = null;
+    }
+  }
+
+  function showScene(scene){
+    [questionScene, analyzingScene, resultScene].forEach(function(node){
+      if(node){
+        node.hidden = node !== scene;
+      }
+    });
+  }
+
+  function resetState(){
+    clearAnalyzeTimer();
+    currentQuestion = 0;
+    answers = new Array(questions.length);
+    latestResult = null;
+    statusEl.textContent = '';
+    optionsEl.removeAttribute('data-locked');
+  }
+
+  function startQuiz(){
+    resetState();
+    renderQuestion();
+    showScene(questionScene);
+  }
+
+  function renderQuestion(){
+    var data = questions[currentQuestion];
+    stepLabel.textContent = 'Question ' + (currentQuestion + 1) + ' of ' + questions.length;
+    barFill.style.width = (((currentQuestion + 1) / questions.length) * 100) + '%';
+    questionEl.textContent = data.question;
+    helpEl.textContent = data.help;
+    optionsEl.innerHTML = '';
+
+    data.options.forEach(function(option){
+      var optionIndex = data.options.indexOf(option);
+      var optionLabel = String.fromCharCode(65 + optionIndex);
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'risk-quiz-option';
+      if(answers[currentQuestion] === option.score){
+        btn.classList.add('selected');
+      }
+      btn.innerHTML = '<span class="risk-quiz-option-badge" aria-hidden="true">' + optionLabel + '</span><span class="risk-quiz-option-copy"><strong>' + option.label + '</strong><p>' + option.detail + '</p></span><span class="risk-quiz-option-check" aria-hidden="true"></span>';
+      btn.addEventListener('click', function(){
+        if(optionsEl.getAttribute('data-locked') === 'true'){ return; }
+        optionsEl.setAttribute('data-locked', 'true');
+        btn.classList.add('selected');
+        answers[currentQuestion] = option.score;
+        window.setTimeout(function(){
+          if(currentQuestion < questions.length - 1){
+            currentQuestion += 1;
+            renderQuestion();
+          } else {
+            processResults();
+          }
+        }, 240);
+      });
+      optionsEl.appendChild(btn);
+    });
+
+    optionsEl.setAttribute('data-locked', 'false');
+    backBtn.disabled = currentQuestion === 0;
+  }
+
+  function buildResult(){
+    var total = answers.reduce(function(sum, value){ return sum + value; }, 0);
+    if(total <= 8){
+      return {
+        fund: 'Jubilee Money Market Fund',
+        profile: 'Conservative',
+        profileTitle: 'Conservative Profile',
+        horizon: 'Short Term',
+        bestFor: 'Short-term goals',
+        reason: 'You appear to prefer stability, quicker access to your money, and a lower-risk place to invest.',
+        fundDetails: 'A liquidity-focused unit trust for short-term goals, emergency funds, and disciplined cash management.',
+        image: 'https://i.ibb.co/tTRtnkLv/hero-uganda-businesswoman.jpg',
+        fundKey: 'mmf'
+      };
+    }
+    if(total <= 11){
+      return {
+        fund: 'Jubilee Balanced Fund',
+        profile: 'Moderate',
+        profileTitle: 'Moderate Profile',
+        horizon: 'Medium to Long Term',
+        bestFor: 'Balanced growth',
+        reason: 'You appear comfortable with some market movement in exchange for a mix of income and long-term growth.',
+        fundDetails: 'A blended fund for investors looking for more growth potential than a money market fund while keeping some balance.',
+        image: 'https://i.ibb.co/DgP5zsSS/eligibility-couple-consultation.jpg',
+        fundKey: 'balanced'
+      };
+    }
+    return {
+      fund: 'Jubilee Balanced Fund',
+      profile: 'Growth',
+      profileTitle: 'Growth Profile',
+      horizon: 'Medium to Long Term',
+      bestFor: 'Longer-term growth',
+      reason: 'You appear willing to stay invested longer and accept more movement in pursuit of stronger growth potential.',
+      fundDetails: 'A longer-horizon fit for investors who want a more growth-oriented path than cash-focused investing.',
+      image: 'https://i.ibb.co/TBDj58ps/hero-african-women-team.jpg',
+      fundKey: 'balanced'
+    };
+  }
+
+  function resultText(result){
+    return [
+      'Jubilee Asset Management Investor Profile Result',
+      '',
+      'Suggested fund match: ' + result.fund,
+      'Profile: ' + result.profile,
+      'Score: ' + answers.reduce(function(sum, value){ return sum + value; }, 0) + ' / 15',
+      'Typical horizon: ' + result.horizon,
+      '',
+      result.reason,
+      '',
+      'This result is a guide only. Final suitability is confirmed during the application process.'
+    ].join('\r\n');
+  }
+
+  function showResult(){
+    latestResult = buildResult();
+    resultFundEl.textContent = latestResult.fund;
+    resultFundDetailsEl.textContent = latestResult.fundDetails;
+    resultReasonEl.textContent = latestResult.reason;
+    resultProfileEl.textContent = latestResult.profile;
+    resultProfileTitleEl.textContent = latestResult.profileTitle;
+    resultScoreEl.textContent = latestResult.bestFor;
+    resultHorizonEl.textContent = latestResult.horizon;
+    resultImageEl.src = latestResult.image;
+    resultImageEl.alt = latestResult.profileTitle;
+    fundBtn.setAttribute('data-fund-modal', latestResult.fundKey);
+    fundBtn.textContent = latestResult.fund === 'Jubilee Money Market Fund' ? 'Learn About Jubilee Money Market Fund' : 'Learn About Jubilee Balanced Fund';
+    statusEl.textContent = '';
+    showScene(resultScene);
+  }
+
+  function processResults(){
+    showScene(analyzingScene);
+    clearAnalyzeTimer();
+    analyzeTimer = window.setTimeout(function(){
+      showResult();
+    }, 900);
+  }
+
+  function saveResult(){
+    if(!latestResult){ return; }
+    var payload = {
+      timestamp: new Date().toISOString(),
+      answers: answers.slice(),
+      result: latestResult
+    };
+    localStorage.setItem(storageKey, JSON.stringify(payload));
+    statusEl.textContent = 'Result saved on this device.';
+  }
+
+  function downloadResult(){
+    if(!latestResult){ return; }
+    var blob = new Blob([resultText(latestResult)], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = 'jubilee-investor-profile-result.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    statusEl.textContent = 'Result downloaded.';
+  }
+
+  function shareResult(){
+    if(!latestResult){ return; }
+    var text = resultText(latestResult);
+    if(navigator.share){
+      navigator.share({
+        title: 'Jubilee Asset Management Investor Profile Result',
+        text: text
+      }).then(function(){
+        statusEl.textContent = 'Result shared.';
+      }).catch(function(){});
+      return;
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        statusEl.textContent = 'Result copied so you can share it anywhere.';
+      });
+      return;
+    }
+    statusEl.textContent = 'Sharing is not available in this browser.';
+  }
+
+  openBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      startQuiz();
+      setOpen(true);
+    });
+  });
+
+  closeBtn.addEventListener('click', function(){
+    clearAnalyzeTimer();
+    setOpen(false);
+  });
+
+  quizModal.addEventListener('click', function(e){
+    if(e.target === quizModal){
+      clearAnalyzeTimer();
+      setOpen(false);
+    }
+  });
+
+  backBtn.addEventListener('click', function(){
+    if(currentQuestion > 0){
+      currentQuestion -= 1;
+      renderQuestion();
+    }
+  });
+
+  resetBtn.addEventListener('click', function(){
+    startQuiz();
+  });
+
+  retakeBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    localStorage.removeItem(storageKey);
+    startQuiz();
+  });
+
+  saveBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    saveResult();
+  });
+  downloadBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    downloadResult();
+  });
+  shareBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    shareResult();
+  });
+  fundBtn.addEventListener('click', function(){
+    clearAnalyzeTimer();
+    setOpen(false);
+  });
+
+  if(applyBtn){
+    applyBtn.addEventListener('click', function(){
+      clearAnalyzeTimer();
+      setOpen(false);
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && quizModal.classList.contains('open')){
+      clearAnalyzeTimer();
+      setOpen(false);
+    }
+  });
+
+  startQuiz();
+})();
+
+</script>
+
+<!-- ── WHATSAPP FLOATING WIDGET ── -->
+<div class="wa-widget" id="waWidget" aria-label="WhatsApp chat widget">
+  <div class="wa-widget-head">
+    <div class="wa-widget-title">
+      <span aria-hidden="true">
+        <svg viewBox="0 0 90 90"><path d="M90 44a44 44 0 0 1-66 38L0 90l8-24A44 44 0 0 1 46 0c24 0 44 20 44 44zM46 7C25 7 9 24 9 44c0 8 2 15 7 21l-5 14 14-4a37 37 0 0 0 58-31C83 24 66 7 46 7zm22 47l-2-1-7-4-3 1-3 4h-3c-1 0-4-1-8-5-3-3-6-6-6-8v-2l2-2 1-1v-2l-4-8c0-2-1-2-2-2h-2l-3 1c-1 1-4 4-4 9s4 11 5 11c0 1 7 12 18 16 11 5 11 3 13 3s7-2 7-5l1-5z"/></svg>
+      </span>
+      Jubilee Asset Management
+    </div>
+    <button class="wa-close" type="button" id="waClose" aria-label="Close WhatsApp chat">
+      <svg viewBox="0 0 48 48"><path d="M38 12.83 35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"/></svg>
+    </button>
+  </div>
+  <div class="wa-widget-body">
+    <div class="wa-message">Hi 👋 Need help choosing the right unit trust fund? Send us a message and an Jubilee advisor will guide you.</div>
+    <div class="wa-quick-replies" aria-label="Quick WhatsApp replies">
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, please help me choose the right unit trust fund for my goals.">Help me choose a fund</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know how to start investing.">How to start investing</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know more about the Jubilee Money Market Fund.">Jubilee Money Market Fund</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know how withdrawals work.">Withdrawals</button>
+    </div>
+    <div class="wa-widget-form">
+      <textarea id="waInput" rows="1" placeholder="Type your message..." aria-label="WhatsApp message"></textarea>
+      <button class="wa-send" type="button" id="waSend" aria-label="Send message on WhatsApp">
+        <svg viewBox="0 0 48 48"><path d="M4.02 42 46 24 4.02 6 4 20l30 4-30 4z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<button class="wa-launcher" type="button" id="waLauncher" aria-label="Open WhatsApp chat">
+  <svg viewBox="0 0 90 90"><path d="M90 44a44 44 0 0 1-66 38L0 90l8-24A44 44 0 0 1 46 0c24 0 44 20 44 44zM46 7C25 7 9 24 9 44c0 8 2 15 7 21l-5 14 14-4a37 37 0 0 0 58-31C83 24 66 7 46 7zm22 47l-2-1-7-4-3 1-3 4h-3c-1 0-4-1-8-5-3-3-6-6-6-8v-2l2-2 1-1v-2l-4-8c0-2-1-2-2-2h-2l-3 1c-1 1-4 4-4 9s4 11 5 11c0 1 7 12 18 16 11 5 11 3 13 3s7-2 7-5l1-5z"/></svg>
+</button>
+
+<script>
+// WhatsApp Widget
+(function(){
+  var phone = '254700000000';
+  var widget = document.getElementById('waWidget');
+  var launcher = document.getElementById('waLauncher');
+  var close = document.getElementById('waClose');
+  var send = document.getElementById('waSend');
+  var input = document.getElementById('waInput');
+  var quickReplies = Array.prototype.slice.call(document.querySelectorAll('.wa-quick-reply'));
+  var hoverTimer = null;
+  var storageKey = 'jubileeAssetMgmtWaOpened';
+  function setOpen(nextOpen){ widget.classList.toggle('open', nextOpen); launcher.setAttribute('aria-expanded', nextOpen ? 'true' : 'false'); }
+  function openWidget(){ if(hoverTimer){ window.clearTimeout(hoverTimer); hoverTimer = null; } setOpen(true); }
+  function closeWidget(){ if(hoverTimer){ window.clearTimeout(hoverTimer); hoverTimer = null; } setOpen(false); }
+  function scheduleClose(){ if(hoverTimer){ window.clearTimeout(hoverTimer); } hoverTimer = window.setTimeout(function(){ setOpen(false); }, 140); }
+  function openWhatsapp(){ var fallback = 'Hello Jubilee, I need help with my unit trust investment.'; var message = (input.value || fallback).trim(); window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(message), '_blank', 'noopener'); }
+  function resizeComposer(){ input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 88) + 'px'; }
+  launcher.setAttribute('aria-expanded','false');
+  launcher.addEventListener('click', function(){ if(widget.classList.contains('open')){ closeWidget(); } else { openWidget(); input.focus(); } });
+  if(window.matchMedia && window.matchMedia('(hover: hover)').matches){
+    launcher.addEventListener('mouseenter', openWidget);
+    launcher.addEventListener('mouseleave', scheduleClose);
+    widget.addEventListener('mouseenter', function(){ if(hoverTimer){ window.clearTimeout(hoverTimer); hoverTimer = null; } });
+    widget.addEventListener('mouseleave', scheduleClose);
+  }
+  close.addEventListener('click', closeWidget);
+  document.addEventListener('pointerdown', function(e){ if(!widget.classList.contains('open')) return; if(widget.contains(e.target) || launcher.contains(e.target)) return; closeWidget(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeWidget(); } });
+  send.addEventListener('click', openWhatsapp);
+  quickReplies.forEach(function(r){ r.addEventListener('click', function(){ input.value = r.getAttribute('data-wa-text') || r.textContent.trim(); resizeComposer(); input.focus(); }); });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); openWhatsapp(); } });
+  input.addEventListener('input', resizeComposer);
+  function openOnLoad(){ try{ if(sessionStorage.getItem(storageKey)) return; sessionStorage.setItem(storageKey, '1'); } catch(err){} window.setTimeout(openWidget, 900); }
+  if(document.readyState === 'complete'){ openOnLoad(); } else { window.addEventListener('load', openOnLoad, {once:true}); }
+})();
+</script>
+
+</body>
+</html>

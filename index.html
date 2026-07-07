@@ -203,7 +203,7 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 
 /* â”€â”€ FUNDS (2-col card grid) â”€â”€ */
 .funds{background:var(--white);padding:52px 0;display:flex;align-items:center}
-.funds-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
+.funds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
 .fund-card{background:var(--bg-lt);border-radius:16px;padding:20px 20px 24px;border:1px solid var(--border);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column;gap:16px}
 .fund-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)}
 .fund-card-media{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/9;background:#dbe8fb; max-height: 150px;}
@@ -1108,6 +1108,36 @@ footer{background:#000000;padding:48px 0 64px;color:#fff;position:relative;z-ind
           </div>
         </div>
         <button class="fund-learn-btn" type="button" data-fund-modal="balanced">Learn more</button>
+      </div>
+
+      <!-- Jubilee Money Market Fund (USD) -->
+      <div class="fund-card">
+        <div class="fund-card-media">
+          <img src="https://i.ibb.co/4nHFWmJc/money-market-fund.png" alt="Jubilee Money Market Fund (USD)" loading="lazy" />
+        </div>
+        <div>
+          <h3>Jubilee Money Market Fund (USD)</h3>
+          <p class="fund-desc">Dollar-denominated stability and liquidity for USD earners and savers.</p>
+        </div>
+        <div class="fund-meta">
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Risk Level</span>
+            <span class="fund-risk-badge fund-risk-low">Low Risk</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Investment Horizon</span>
+            <span class="fund-meta-val">Short Term</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Main Goal</span>
+            <span class="fund-meta-val">USD capital preservation</span>
+          </div>
+          <div class="fund-meta-row">
+            <span class="fund-meta-lbl">Best For</span>
+            <span class="fund-meta-val">Diaspora and USD earners</span>
+          </div>
+        </div>
+        <button class="fund-learn-btn" type="button" data-fund-modal="usdmmf">Learn more</button>
       </div>
 
     </div>
@@ -2043,6 +2073,54 @@ Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(fu
         '',
         'This fund is designed for investors seeking a mix of income and capital growth.'
       ]
+    },
+    usdmmf: {
+      title: 'Jubilee Money Market Fund (USD)',
+      risk: 'Low Risk',
+      riskClass: 'low',
+      iconBg: 'var(--primary)',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.1 1.1-2 2.5-2s2.5.9 2.5 2c0 1.5-1.5 2-2.5 2.2C10.9 12 9 12.6 9 14.2c0 1.1 1.4 2 3 2s2.7-.6 2.9-1.6"/></svg>',
+      statOneLabel: 'Fund Focus',
+      statOneValue: 'USD Liquidity',
+      statOneNote: 'Built for capital preservation and quick access, denominated in US Dollars.',
+      statTwoLabel: 'Minimum Investment',
+      statTwoValue: 'USD 100',
+      statTwoNote: 'Public minimum lump-sum entry point.',
+      statThreeLabel: 'Time Horizon',
+      statThreeValue: 'Short Term',
+      statThreeNote: 'Suitable when you may need the money sooner.',
+      description: 'A US Dollar-denominated unit trust designed for capital preservation, dollar liquidity, and protection against Kenyan Shilling volatility.',
+      allocation: [
+        { label: 'USD deposits', value: '55%', color: 'var(--primary)' },
+        { label: 'USD government securities', value: '30%', color: '#a00a29' },
+        { label: 'Cash and demand deposits (USD)', value: '13%', color: '#e8a9b3' },
+        { label: 'Other securities', value: '2%', color: '#cbd5e1' }
+      ],
+      facts: [
+        { label: 'Management Fee', value: 'Up to 2% p.a.' },
+        { label: 'Upfront Fee', value: 'No initial fee' },
+        { label: 'Withdrawal Timeline', value: '~2 to 3 business days' },
+        { label: 'Top Ups', value: 'From USD 100' }
+      ],
+      whoFor: [
+        'Kenyans in the diaspora sending or saving in US Dollars.',
+        'Investors who earn or spend in USD and want to avoid conversion costs.',
+        'Those looking to diversify away from Kenyan Shilling exposure.'
+      ],
+      downloadTitle: 'Jubilee Money Market Fund (USD) Summary',
+      downloadLines: [
+        'Jubilee Asset Management',
+        'Jubilee Money Market Fund (USD)',
+        '',
+        'Risk: Low Risk',
+        'Minimum investment: USD 100',
+        'Time horizon: Short Term',
+        'Management fee: Up to 2% p.a.',
+        'Upfront fee: No initial fee',
+        'Withdrawal timeline: Approximately 2 to 3 business days',
+        '',
+        'This fund is designed for liquidity, capital preservation, and steady USD-denominated income.'
+      ]
     }
   };
   var openButtons = Array.prototype.slice.call(document.querySelectorAll('[data-fund-modal]'));
@@ -2542,11 +2620,12 @@ Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(fu
     </button>
   </div>
   <div class="wa-widget-body">
-    <div class="wa-message">Hi 👋 Need help choosing the right unit trust fund? Send us a message and an Jubilee advisor will guide you.</div>
+    <div class="wa-message">Hi 👋 Need help choosing the right unit trust fund? Send us a message and a Jubilee advisor will guide you.</div>
     <div class="wa-quick-replies" aria-label="Quick WhatsApp replies">
       <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, please help me choose the right unit trust fund for my goals.">Help me choose a fund</button>
       <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know how to start investing.">How to start investing</button>
       <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know more about the Jubilee Money Market Fund.">Jubilee Money Market Fund</button>
+      <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know more about the Jubilee Money Market Fund (USD).">Jubilee Money Market Fund (USD)</button>
       <button class="wa-quick-reply" type="button" data-wa-text="Hello Jubilee, I would like to know how withdrawals work.">Withdrawals</button>
     </div>
     <div class="wa-widget-form">

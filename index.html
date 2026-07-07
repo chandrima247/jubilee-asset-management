@@ -489,8 +489,8 @@ linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));border:1px
 .faq-item.open .faq-a{max-height:420px;padding:0 20px 18px}
 
 /* â”€â”€ CTA SECTION â”€â”€ */
-.cta-bg{background:linear-gradient(180deg,var(--primary-dark) 0%,#4a0818 58%,var(--primary) 100%);padding:40px 0 28px;position:relative;overflow:hidden;display:flex;align-items:center}
-.cta-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(186,12,47,.14),transparent 32%),linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));pointer-events:none}
+.cta-bg{background:var(--primary);padding:40px 0 28px;position:relative;overflow:hidden;display:flex;align-items:center}
+.cta-bg::before{content:none}
 .cta-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:56px;width:100%;position:relative;z-index:1}
 .cta-top{display:grid;grid-template-columns:minmax(0,520px) auto;gap:24px;align-items:center;justify-content:space-between}
 .cta-top-copy .stag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:var(--white)}
@@ -1592,7 +1592,7 @@ footer{background:#000000;padding:48px 0 64px;color:#fff;position:relative;z-ind
       </div>
       <div class="cta-metrics" aria-label="Key highlights">
         <div class="cta-metric">
-          <span class="cta-metric-value">2</span>
+          <span class="cta-metric-value">3</span>
           <span class="cta-metric-label">Fund options</span>
         </div>
         <div class="cta-metric">
